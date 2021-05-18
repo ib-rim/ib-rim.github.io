@@ -1,0 +1,174 @@
+
+@font-face {
+	font-family: 'sketchup';
+	src: url('../fonts/sketchup.ttf');
+}
+
+@font-face {
+	font-family: 'doctor-soos';
+	src: url('../fonts/doctor-soos.ttf');
+}
+
+@font-face {
+	font-family: 'Milliard';
+	src: url('../fonts/Rene\ Bieder\ \ Milliard\ ExtraLight.woff');
+}
+
+@font-face {
+	font-family: 'MilliardBold';
+	src: url('../fonts/Rene\ Bieder\ \ Milliard\ Medium.woff');
+}
+
+@font-face {
+	font-family: 'MilliardExtraBold';
+	src: url('../fonts/Rene\ Bieder\ \ Milliard\ ExtraBold.woff');
+}
+
+:root {
+	--shadow: 0px 8px 16px 0 rgba(0, 0, 0, 0.2);
+	--light-blue: #b8dbf8;
+	--text-blue: #101693;
+	--background-blue: #105893;
+	--dark-blue: #193e5c;
+}
+
+body {
+	color: var(--text-blue);
+	background-color: var(--background-blue);
+	font-family: Milliard;
+}
+
+b {
+	font-family: MilliardBold;
+}
+
+a {
+	color: inherit;
+	text-decoration: none;
+	font-family: MilliardBold;
+}
+
+/* Pages */
+
+.columns {
+	display: flex;
+	margin: 2em 1em;
+	gap: 1em;
+}
+
+.col {
+	flex: 1;
+	box-shadow: var(--shadow);
+	border-radius: 10px;
+}
+
+.content {
+	padding: 1em 1em 0.5em;
+	height: 28em;
+	background-color: #ffffff;
+}
+
+.navLink {
+	font-family: MilliardBold;
+	font-size: 4.5rem;
+	text-align: center;
+	background-color: var(--dark-blue);
+	color: var(--light-blue);
+	padding: 0.1em 0em 0.2em 0em;
+}
+
+/* About Me */
+
+.aboutMe {
+	display: flex;
+}
+
+.photo {
+	width: 210px;
+	height: 210px;
+	box-shadow: var(--shadow);
+}
+
+.aboutMeText {
+	font-size: 1.6rem;
+	margin: 0.5em 0em 0em 0.5em;
+}
+
+.listText {
+	display: inline-block;
+	font-size: 1.6rem;
+	margin: 1em 0em 0em 0.5em;
+	font-family: Milliard;
+}
+
+ul {
+	margin-right: 2em;
+}
+
+
+/* Portfolio */
+
+.portfolioText {
+	display: block;
+	width: fit-content;
+	font-size: 1.9rem;
+	margin: 0.5em 0em 0em 0.5em;
+}
+
+.portfolioText::before {
+	content: "> ";
+}
+
+/* Contact */
+
+.email {
+	margin-top: 3em;
+	display: flex;
+}
+
+.linkedin {
+	margin-top: 3em;
+	display: flex;
+}
+
+.contactIcon {
+	margin: 0em 0em 0em 1em;
+	height: 140px;
+	width: 140px;
+}
+
+.contactText {
+	font-size: 3rem;
+	margin: 0.7em 0em 0em 1em;
+	width: fit-content;
+}
+
+/* Pocket Component */
+
+.head {
+	width: 11em;
+	position: absolute;
+	padding: 1.5em 1em;
+	font-size: 1.5rem;
+	text-align: right;
+	background-color: white;
+	font-weight: bold;
+}
+
+.info {
+	visibility: hidden;
+	width: 20em;
+	min-height: 4em;
+	padding: 1em;
+	transition: all 0.5s;
+}
+
+.head:hover + .info {
+	visibility: visible;
+	border-left: 3px solid #105893;
+	margin-left: 20em;
+}
+
+.pocket {
+	width: fit-content;
+}
