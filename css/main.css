@@ -153,8 +153,13 @@ ul {
 	}
 
 	.navLink {
+		padding: 0.2em 0em 0.2em 0em;
 		margin-top: 1em;
 		font-size: 3rem;
+	}
+
+	.first {
+		margin-top: 0em;
 	}
 	
 	.aboutMe {
