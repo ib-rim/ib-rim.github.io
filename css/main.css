@@ -35,17 +35,17 @@
 body {
 	color: var(--text-blue);
 	background-color: var(--background-blue);
-	font-family: Milliard;
+	font-family: 'Milliard';
 }
 
 b {
-	font-family: MilliardBold;
+	font-family: 'MilliardBold';
 }
 
 a {
 	color: inherit;
 	text-decoration: none;
-	font-family: MilliardBold;
+	font-family: 'MilliardBold';
 }
 
 /* Pages */
@@ -101,7 +101,7 @@ a {
 	display: inline-block;
 	font-size: 1.6rem;
 	margin: 1em 0em 0em 0.5em;
-	font-family: Milliard;
+	font-family: 'Milliard';
 }
 
 ul {
@@ -167,6 +167,11 @@ ul {
 	}
 
 	.aboutMeText {
+		font-size: 1.5rem;
+		font-family: 'Milliard';
+	}
+
+	.listText {
 		font-size: 1.5rem;
 	}
 
