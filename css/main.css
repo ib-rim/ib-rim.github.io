@@ -99,8 +99,8 @@ a {
 
 .listText {
 	display: inline-block;
-	font-size: 1.6rem;
-	margin: 1em 0em 0em 0.5em;
+	font-size: 1.55rem;
+	margin: 1em 0em 0em 0em;
 	font-family: 'Milliard';
 }
 
@@ -111,16 +111,24 @@ ul {
 
 /* Portfolio */
 
-.portfolioText {
-	display: block;
-	width: fit-content;
-	font-size: 1.9rem;
+.portfolioLink {
+	font-size: 1.8rem;
 	margin: 0.5em 0em 0em 0.5em;
 }
 
-.portfolioText::before {
-	content: "> ";
+.portfolioLink img {
+	height: 36px;
+	width: 36px;
 }
+
+.portfolioText, .portfolioTextG {
+	position: absolute;
+	margin-left: 0.5em;
+}
+
+.portfolioTextG::before {
+	content: "/ ";
+} 
 
 /* Contact */
 
@@ -175,8 +183,13 @@ ul {
 		font-size: 1.5rem;
 	}
 
-	.portfolioText {
+	.portfolioLink {
 		font-size: 1.5rem;
+	}
+
+	.portfolioText {
+		position: absolute;
+		margin-left: 0.5em;
 	}
 
 	.contactIcon {
