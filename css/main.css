@@ -29,12 +29,13 @@
 	--background-blue: #105893;
 	--about-blue: #082c49;
 	--portfolio-blue: #1b3b5b;
+	--white: #ffffff;
 }
 
 html {
 	background-color: var(--background-blue);
 	font-family: 'Milliard';
-	color: white;
+	color: var(--white);
 	height: 100%;
 }
 
@@ -107,7 +108,7 @@ a {
 }
 
 a:visited {
-	color: white;
+	color: var(--white);
 }
 
 .description {
