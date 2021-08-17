@@ -26,93 +26,129 @@
 
 :root {
 	--shadow: 0px 8px 16px 0 rgba(0, 0, 0, 0.2);
-	--light-blue: #b8dbf8;
-	--text-blue: #101693;
 	--background-blue: #105893;
-	--dark-blue: #193e5c;
+	--about-blue: #082c49;
+	--portfolio-blue: #1b3b5b;
+}
+
+html {
+	background-color: var(--background-blue);
+	font-family: 'Milliard';
+	color: white;
+	height: 100%;
 }
 
 body {
-	color: var(--text-blue);
-	background-color: var(--background-blue);
-	font-family: 'Milliard';
+	position: absolute;
+	inset: 0;
+	margin: auto;
+	height: 90%;
+	width: 95%;
 }
 
-b {
-	font-family: 'MilliardBold';
-}
+/* FOLDER PORTFOLIO */
 
-a {
-	color: inherit;
-	text-decoration: none;
-	font-family: 'MilliardBold';
-}
-
-/* Pages */
-
-.columns {
+.folder {
 	display: flex;
-	margin: 2em 1em;
-	gap: 1em;
-}
-
-.col {
-	flex: 1;
-}
-
-.content {
-	padding: 1em 1em 0.5em;
-	min-height: 28em;
-	background-color: #ffffff;
+	height: 80%;
+	padding: 3em 2em 1em 2em;
 	box-shadow: var(--shadow);
-	border-radius: 10px;
+
+	font-size: 20px;
 }
 
-.navLink {
-	margin: 0em 0em 0.5em;
-	padding: 0.1em 0em 0.2em 0em;
-	box-shadow: var(--shadow);
-	border-radius: 10px;
-	background-color: var(--dark-blue);
-	color: var(--light-blue);
-	font-family: MilliardBold;
-	font-size: 4.5rem;
+#aboutFolder {
+	background-color: var(--about-blue);
+}
+
+#portfolioFolder {
+	background-color: var(--portfolio-blue);
+	display: none;
+}
+
+.tab {
+	display: inline-block;
+
+	margin-right: 0.5em;
+	padding-top: 10px;
+	height: 40px;
+	width: 150px;
+	
+	font-family: 'MilliardBold';
+	font-size: 1.5rem;
 	text-align: center;
 }
 
-/* About Me */
+#tab1 {
+	background-color: var(--about-blue);
+}
 
-.aboutMe {
-	display: flex;
+#tab2 {
+	background-color: var(--portfolio-blue);
+}
+
+.name {
+	font-family: MilliardBold;
+	font-size: 3rem;
+	width: fit-content;
+}
+
+.cs {
+	font-family: 'MilliardBold';
+	font-size: 24px;
+	padding: 4px;	
+}
+
+a {
+	text-decoration: none;
+	font-family: 'MilliardBold';
+	font-size: 1.5rem;
+	padding: 4px;	
+}
+
+a:visited {
+	color:inherit;
+}
+
+.description {
+	display: inline-block;
+	padding: 1em 2em;
+}
+
+.icon {
+	height: 50px;
+	width: 50px;
+	margin: 3em 1em 0 0 ;
+	background-color: w;
+}
+
+.frame {
+	width: 450px;
+	height: 450px;
 }
 
 .photo {
-	width: 210px;
-	height: 210px;
+	height: 400px;
+	width: 400px;
+	border-radius: 500px;
+	border: 3px solid whitesmoke;
 	box-shadow: var(--shadow);
 }
 
-.aboutMeText {
-	font-size: 1.6rem;
-	margin: 0.5em 0em 0em 0.5em;
+.skills {
+	height: max-content;
+	padding: 2.5em 0em;
 }
 
-.listText {
-	display: inline-block;
-	font-size: 1.55rem;
-	margin: 1em 0em 0em 0em;
-	font-family: 'Milliard';
+.listHeader {
+	font-family: 'MilliardBold';
+	font-size: 2rem;
 }
-
-ul {
-	margin-right: 1em;
-}
-
 
 /* Portfolio */
 
 .portfolioLink {
-	font-size: 1.8rem;
+	display: flex;
 	margin: 0.5em 0em 0em 0.5em;
 }
 
@@ -122,7 +158,6 @@ ul {
 }
 
 .portfolioText, .portfolioTextG {
-	position: absolute;
 	margin-left: 0.5em;
 }
 
@@ -130,75 +165,48 @@ ul {
 	content: "/ ";
 } 
 
-/* Contact */
-
-.email {
-	margin-top: 3em;
-	display: flex;
-}
-
-.linkedin {
-	margin-top: 3em;
-	display: flex;
-}
-
-.contactIcon {
-	margin: 0em 0em 0em 1em;
-	height: 140px;
-	width: 140px;
-}
-
-.contactText {
-	font-size: 3rem;
-	margin: 0.7em 0em 0em 1em;
-	width: fit-content;
-}
-
-@media (max-width: 768px) {
-
-	.columns {
+@media  (max-width: 1280px) {
+	
+	.folder {
 		flex-direction: column;
+		height: max-content;
 	}
 
-	.navLink {
-		padding: 0.2em 0em 0.2em 0em;
-		margin-top: 1em;
+	#aboutFolder {
+		padding: 0 0 0 2em;
+		margin-bottom: 1em;
+	}
+
+	#portfolioFolder {
+		padding: 2em 0em 2em 1em;
+	}
+	
+	#portfolioFolder ul {
+		padding: 0;
+	}
+
+	.description {
+		padding: 0;	
+	}
+
+	.name {
 		font-size: 3rem;
 	}
 
-	.first {
-		margin-top: 0em;
+	.frame {
+		margin-top: 3em;
+		width: max-content;
+		height: max-content;
+	}
+
+	.photo {
+		height: 300px;
+		width: 300px;
+		border-radius: 0;
 	}
 	
-	.aboutMe {
-		display: block;
+	.skills {
+		padding-top: 1em;
 	}
-
-	.aboutMeText {
-		font-size: 1.5rem;
-		font-family: 'Milliard';
-	}
-
-	.listText {
-		font-size: 1.5rem;
-	}
-
-	.portfolioLink {
-		font-size: 1.5rem;
-	}
-
-	.portfolioText {
-		position: absolute;
-		margin-left: 0.5em;
-	}
-
-	.contactIcon {
-		height: 100px;
-		width: 100px;
-	}
-
-	.contactText {
-		font-size: 2rem;
-		margin-left: 0.5em;
-	}
+	
 }

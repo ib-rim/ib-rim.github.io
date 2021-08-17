@@ -7,94 +7,90 @@
         <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
         <link rel="manifest" href="/site.webmanifest">
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+        <meta name="description" content="Portfolio website for Ibrahim Bashir">
         <meta name="msapplication-TileColor" content="#da532c">
         <meta name="theme-color" content="#ffffff">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css/main.css">
+        <script type="text/javascript" src="scripts.js" defer></script>
     </head>
     <body>
-        <div class="container">
-            <div class="columns">
-                <div class="col">
-                    <div class="navLink first">
-                        About Me
-                    </div>
-                    <div class="content"> 
-                        <div class="aboutMe">
-                            <img class="photo" src="img/me.jpg" alt="Ibrahim Bashir"/>
-                            <div class="aboutMeText">
-                                I'm <b>Ibrahim</b>, a <b>Computer Science</b> student at <b>Queen Mary University of London.</b>
-                            </div>
-                        </div>
-                        <div class="listText">
-                            <b>Interests:</b>
-                            <ul>
-                                <li>UI/UX</li>
-                                <li>Data Analysis</li>
-                            </ul>
-                        </div>
-                        <div class="listText">
-                            <b>Skills:</b>
-                            <ul>
-                                <li>HTML/CSS/JS</li>
-                                <li>React</li>
-                            </ul>
-                        </div>
-                    </div>
+        <div class="tab" id="tab1" onclick="showAbout()">
+            About Me
+        </div>
+        <div class="tab" id="tab2" onclick="showPortfolio()">
+            Portfolio
+        </div>
+        <div class="folder" id="aboutFolder">
+            <section class="description">
+                <h1 class="name">I'm Ibrahim Bashir,</h1> 
+                a  <span class="cs">Computer Science</span> student 
+                <br/> at <a href="https://www.qmul.ac.uk/" target="_blank" rel="noopener noreferrer">Queen Mary University of London.</a>            
+                <div>
+                    <a href="https://uk.linkedin.com/in/ibrahim-bashir-250953197" target="_blank" rel="noopener noreferrer">
+                        <img class="icon" src="img/linkedIn.png">
+                    </a>
+                    <a href="mailto:ib.bashir@hotmail.com" target="_blank" rel="noopener noreferrer">
+                        <img class="icon" src="img/email.png">
+                    </a>
+                    <a href="https://github.com/ib-rim" target="_blank" rel="noopener noreferrer">
+                        <img class="icon" src="img/github4.png">
+                    </a>
                 </div>
-                <div class="col">
-                    <div class="navLink">
-                        Portfolio
-                    </div>
-                    <div class="content">
-                        <div class="portfolioLink">
-                            <a href="https://github.com/ib-rim/speedcube" target="_blank" rel="noopener noreferrer">
-                                <img src="img/GitHub-Mark-32px.png" alt="GitHub Logo"/>
-                            </a>
-                            <a class="portfolioTextG" href="https://ib-rim.github.io/speedcube" target="_blank" rel="noopener noreferrer">Speedcubing App</a>
-                        </div>
-                        <div class="portfolioLink">
-                            <a href="https://github.com/ib-rim/calculator-app" target="_blank" rel="noopener noreferrer">
-                                <img src="img/GitHub-Mark-32px.png" alt="GitHub Logo"/>
-                            </a>
-                            <a class="portfolioTextG" href="https://ib-rim.github.io/calculator-app/" target="_blank" rel="noopener noreferrer">Calculator</a>
-                        </div>
-                        <div class="portfolioLink">
-                            <a href="https://github.com/ib-rim/sunnyside-agency" target="_blank" rel="noopener noreferrer">
-                                <img src="img/GitHub-Mark-32px.png" alt="GitHub Logo"/>
-                            </a>
-                            <a class="portfolioTextG" href="https://ib-rim.github.io/sunnyside-agency/" target="_blank" rel="noopener noreferrer">Landing Page</a>
-                        </div>
-                        <div class="portfolioLink">
-                            <a href="https://github.com/ib-rim/weather-app" target="_blank" rel="noopener noreferrer">
-                                <img src="img/GitHub-Mark-32px.png" alt="GitHub Logo"/>
-                                <span class="portfolioText">Weather App for Kids</span>
-                            </a>
-                        </div>
-                        <div class="portfolioLink">
-                            <a href="https://github.research.its.qmul.ac.uk/ec19048/fdm-expenses" target="_blank" rel="noopener noreferrer">
-                                <img src="img/GitHub-Mark-32px.png" alt="GitHub Logo"></img>
-                                <span class="portfolioText">Expense Claim App</span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col">
-                    <div class="navLink">
-                        Contact Me
-                    </div>
-                    <div class="content">
-                        <a class="email" href="mailto:ib.bashir@hotmail.com" target="_blank" rel="noopener noreferrer">
-                            <img class="contactIcon" src="img/email.png" alt="Email Icon"/>
-                            <div class="contactText">Email</div>
-                        </a>
-                        <a class="linkedin" href="https://uk.linkedin.com/in/ibrahim-bashir-250953197" target="_blank" rel="noopener noreferrer">
-                            <img class="contactIcon" src="img/linkedin.png" alt="LinkedIn Icon"/>
-                            <div class="contactText">Linked In</div>
-                        </a>	
-                    </div>
-                </div>
+            </section>
+            <div class="frame">
+                <img class="photo" src="/img/me.jpg"/>
             </div>
+            <section class="skills">
+                <h2 class="listHeader">Skillset:</h2>
+                <ul>
+                    <li>HTML / CSS / JS</li>
+                    <li>React</li>
+                </ul>
+                <h2 class="listHeader">Interests:</h2>
+                <ul>
+                    <li>UI / UX</li>
+                    <li>Data Analysis</li>
+                </ul>
+            </section>
+        </div>
+        <div class="folder" id="portfolioFolder">
+            <ul>
+                <div class="portfolioLink">
+                    <a href="https://github.com/ib-rim/speedcube" target="_blank" rel="noopener noreferrer">
+                        <img src="img/github4.png" alt="GitHub Logo"/>
+                    </a>
+                    <a class="portfolioTextG" href="https://ib-rim.github.io/speedcube" target="_blank" rel="noopener noreferrer">Speedcubing App</a>
+                </div>
+                <div class="portfolioLink">
+                    <a href="https://github.com/ib-rim/calculator-app" target="_blank" rel="noopener noreferrer">
+                        <img src="img/github4.png" alt="GitHub Logo"/>
+                    </a>
+                    <a class="portfolioTextG" href="https://ib-rim.github.io/calculator-app/" target="_blank" rel="noopener noreferrer">Calculator</a>
+                </div>
+                <div class="portfolioLink">
+                    <a href="https://github.com/ib-rim/sunnyside-agency" target="_blank" rel="noopener noreferrer">
+                        <img src="img/github4.png" alt="GitHub Logo"/>
+                    </a>
+                    <a class="portfolioTextG" href="https://ib-rim.github.io/sunnyside-agency/" target="_blank" rel="noopener noreferrer">Sunnyside Agency Landing Page</a>
+                </div>
+                <div class="portfolioLink">
+                    <a href="https://github.com/ib-rim/weather-app" target="_blank" rel="noopener noreferrer">
+                        <img src="img/github4.png" alt="GitHub Logo"/>
+                    </a>
+                    <a href="https://github.com/ib-rim/weather-app" target="_blank" rel="noopener noreferrer">
+                        <span class="portfolioText">Weather App for Kids</span>
+                    </a>
+                </div>
+                <div class="portfolioLink">
+                    <a href="https://github.research.its.qmul.ac.uk/ec19048/fdm-expenses" target="_blank" rel="noopener noreferrer">
+                        <img src="img/github4.png" alt="GitHub Logo"></img>
+                    </a>
+                    <a href="https://github.research.its.qmul.ac.uk/ec19048/fdm-expenses" target="_blank" rel="noopener noreferrer">
+                        <span class="portfolioText">Expense Claim App</span>
+                    </a>
+                </div>
+            </ul>
         </div>
     </body>
 </html>
