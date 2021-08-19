@@ -96,7 +96,7 @@ body {
 
 .highlight {
 	font-family: 'MilliardBold';
-	font-size: 24px;
+	font-size: 1.5rem;
 	padding: 4px;	
 }
 
@@ -133,6 +133,10 @@ a:visited {
 	border-radius: 500px;
 	border: 3px solid whitesmoke;
 	box-shadow: var(--shadow);
+}
+
+.mobilePhoto {
+	display: none;
 }
 
 .skills {
@@ -186,25 +190,28 @@ a:visited {
 	}
 
 	.description {
+		font-size: 1rem;
 		padding: 0;	
 	}
 
+	.highlight {
+		font-size: 1.3rem;
+	}
+	
+	.mobilePhoto {
+		margin-top: 2em;
+		display: inline-block;
+		width: 270px;
+	}
+
 	.name {
-		font-size: 3rem;
+		font-size: 2rem;
 	}
 
 	.frame {
-		margin-top: 3em;
-		width: max-content;
-		height: max-content;
+		display: none;
 	}
 
-	.photo {
-		height: 280px;
-		width: 280px;
-		border-radius: 0;
-	}
-	
 	.skills {
 		padding-top: 1em;
 	}
