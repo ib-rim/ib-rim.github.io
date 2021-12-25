@@ -73,10 +73,6 @@ body {
 	padding: 0em 2em 0em 2em;
 }
 
-.portfolioLinks {
-	margin-top: 4em;
-}
-
 .tab {
 	display: inline-block;
 
@@ -165,6 +161,15 @@ a:visited {
 
 /* Portfolio */
 
+.portfolioHeader {
+    font-family: 'MilliardBold';
+	margin: 2em 0em 0em 2em;
+}
+
+.portfolioLinks {
+	margin-top: 2em;
+}
+
 .portfolioLink {
 	display: flex;
 	margin: 0.5em 0em 0em 0.5em;
@@ -229,5 +234,8 @@ a:visited {
 	.skills {
 		padding-top: 1em;
 	}
-	
+
+    .portfolioHeader {
+        margin: 0em 0em 0em 1em;
+    }
 }
