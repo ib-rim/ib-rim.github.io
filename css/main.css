@@ -18,7 +18,6 @@
 	--background-blue: #105893;
 	--about-blue: #082c49;
 	--portfolio-blue: #1b3b5b;
-	--hobbies-blue: #2c445c;
 	--white: #ffffff;
 }
 
@@ -54,6 +53,7 @@ body {
 	background-color: var(--portfolio-blue);
 	display: none;
 	padding: 0em 2em 0em 2em;
+	flex: 0 0 auto;
 }
 
 .tab {
@@ -136,20 +136,66 @@ a:visited {
 	font-size: 2rem;
 }
 
-/* Portfolio */
-
-.header--portfolio {
-	font-family: "MilliardBold";
-	margin: 2em 0em 0em 2em;
+.webdev {
+	width: 500px;
 }
+
+.project {
+	opacity: 0;
+	transition: 1s;
+	background-color: rgb(8, 2, 38);
+	box-shadow: var(--shadow);
+	width: 100%;
+	margin: 2em 0 2em 2em;
+	border-radius: 15px;
+	overflow: hidden;
+}
+
+.project__image {
+	width: 100%;
+	height: 12em;
+	object-fit: contain;
+	background-color: black;
+}
+
+.project__description {
+	display: flex;
+	flex-direction: column;
+	gap: 1em;
+	padding: 2em;
+}
+
+.project__header {
+	font-family: "MilliardBold";
+}
+
+.project__link--git {
+	height: 48px;
+	width: 48px;
+}
+
+.project__link--deploy {
+	font-size: 1.3rem;
+	text-decoration: underline;
+}
+
+/* Portfolio */
 
 .portfolio__links {
 	margin-top: 2em;
+	list-style-type: square;
 }
 
 .portfolio__link {
 	display: flex;
-	margin: 0.5em 0em 0em 0.5em;
+	background: none;
+	border: none;
+
+	margin: 0.3em 0em 0em 0em;
+
+	font-size: 1.5rem;
+	font-family: "MilliardBold";
+	color: var(--white);
 }
 
 .portfolio__link img {
@@ -174,20 +220,13 @@ a:visited {
 
 	.folder {
 		flex-direction: column;
+		padding: 1em 1em 0;
+		margin-bottom: 1em;
 		gap: 1em;
 	}
 
-	#folder--about {
-		padding: 1em 1em 0;
-		margin-bottom: 1em;
-	}
-
 	#folder--portfolio {
-		padding: 2em 0em 2em 1em;
-	}
-
-	#folder--portfolio ul {
-		padding: 0;
+		padding: 1em;
 	}
 
 	.description {
@@ -215,13 +254,28 @@ a:visited {
 
 	.skills {
 		padding-top: 1em;
-	}
-
-	.header--portfolio {
-		margin: 0em 0em 0em 1em;
+		font-size: 1.2rem;
 	}
 
 	.header--list {
 		font-size: 1.5rem;
+	}
+
+	/* PORTFOLIO  */
+
+	.portfolio__link {
+		font-size: 1.2rem;
+	}
+
+	.project {
+		margin: 0em;
+	}
+
+	.project__header {
+		font-size: 1.5rem;
+	}
+
+	.project__text {
+		font-size: 1rem;
 	}
 }
