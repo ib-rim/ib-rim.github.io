@@ -1,27 +1,16 @@
-
 @font-face {
-	font-family: 'sketchup';
-	src: url('../fonts/sketchup.ttf');
+	font-family: "Milliard";
+	src: url("../fonts/Rene\ Bieder\ \ Milliard\ ExtraLight.woff");
 }
 
 @font-face {
-	font-family: 'doctor-soos';
-	src: url('../fonts/doctor-soos.ttf');
+	font-family: "MilliardBold";
+	src: url("../fonts/Rene\ Bieder\ \ Milliard\ Medium.woff");
 }
 
 @font-face {
-	font-family: 'Milliard';
-	src: url('../fonts/Rene\ Bieder\ \ Milliard\ ExtraLight.woff');
-}
-
-@font-face {
-	font-family: 'MilliardBold';
-	src: url('../fonts/Rene\ Bieder\ \ Milliard\ Medium.woff');
-}
-
-@font-face {
-	font-family: 'MilliardExtraBold';
-	src: url('../fonts/Rene\ Bieder\ \ Milliard\ ExtraBold.woff');
+	font-family: "MilliardExtraBold";
+	src: url("../fonts/Rene\ Bieder\ \ Milliard\ ExtraBold.woff");
 }
 
 :root {
@@ -29,22 +18,18 @@
 	--background-blue: #105893;
 	--about-blue: #082c49;
 	--portfolio-blue: #1b3b5b;
+	--hobbies-blue: #2c445c;
 	--white: #ffffff;
 }
 
 html {
 	background-color: var(--background-blue);
-	font-family: 'Milliard';
+	font-family: "Milliard";
 	color: var(--white);
-	height: 100%;
 }
 
 body {
-	position: absolute;
-	inset: 0;
-	margin: auto;
-	height: 90%;
-	width: 95%;
+	margin: 3em 3em 0;
 }
 
 /* FOLDER PORTFOLIO */
@@ -53,21 +38,19 @@ body {
 	display: flex;
 	gap: 2em;
 
-	/* height: 80%;
-	padding: 3em 2em 1em 2em; */
-	height: 90%;
+	min-height: 80vh;
 	padding: 0em 2em 0em 4em;
 
 	box-shadow: var(--shadow);
 
-	font-size: 20px;
+	font-size: 1.25rem;
 }
 
-#aboutFolder {
+#folder--about {
 	background-color: var(--about-blue);
 }
 
-#portfolioFolder {
+#folder--portfolio {
 	background-color: var(--portfolio-blue);
 	display: none;
 	padding: 0em 2em 0em 2em;
@@ -77,44 +60,42 @@ body {
 	display: inline-block;
 
 	margin-right: 0.5em;
-	padding-top: 10px;
-	height: 40px;
+	padding: 0.4em 0 0.2em;
 	width: 150px;
-	
-	font-family: 'MilliardBold';
+
+	font-family: "MilliardBold";
 	font-size: 1.5rem;
 	text-align: center;
 }
 
-#tab1 {
+#tab--about {
 	background-color: var(--about-blue);
 }
 
-#tab2 {
+#tab--portfolio {
 	background-color: var(--portfolio-blue);
 }
 
 .name {
 	font-family: MilliardBold;
 	font-size: 3rem;
-	width: fit-content;
 }
 
 .highlight {
-	font-family: 'MilliardBold';
+	font-family: "MilliardBold";
 	font-size: 1.5rem;
-	padding: 4px;	
+	padding: 4px;
 }
 
 a {
 	text-decoration: none;
-	font-family: 'MilliardBold';
+	font-family: "MilliardBold";
 	font-size: 1.5rem;
-	padding: 4px;	
+	padding: 4px;
 }
 
 a:visited {
-	color: var(--white) !important;
+	color: var(--white);
 }
 
 .description {
@@ -123,17 +104,14 @@ a:visited {
 	align-self: center;
 }
 
-.icon {
-	height: 50px;
-	width: 50px;
-	margin: 3em 1em 0 0 ;
+.contact {
+	display: flex;
 }
 
-.frame {
-	width: 450px;
-	height: 450px;
-	padding: 3em 0;
-	align-self: center;
+.contact__icon {
+	height: 50px;
+	width: 50px;
+	margin: 3em 1em 0 0;
 }
 
 .photo {
@@ -142,100 +120,108 @@ a:visited {
 	border-radius: 500px;
 	border: 3px solid whitesmoke;
 	box-shadow: var(--shadow);
+	align-self: center;
 }
 
-.mobilePhoto {
+.photo--mobile {
 	display: none;
 }
 
 .skills {
-	height: max-content;
-	padding: 5.5em 0em;
 	align-self: center;
 }
 
-.listHeader {
-	font-family: 'MilliardBold';
+.header--list {
+	font-family: "MilliardBold";
 	font-size: 2rem;
 }
 
 /* Portfolio */
 
-.portfolioHeader {
-    font-family: 'MilliardBold';
+.header--portfolio {
+	font-family: "MilliardBold";
 	margin: 2em 0em 0em 2em;
 }
 
-.portfolioLinks {
+.portfolio__links {
 	margin-top: 2em;
 }
 
-.portfolioLink {
+.portfolio__link {
 	display: flex;
 	margin: 0.5em 0em 0em 0.5em;
 }
 
-.portfolioLink img {
+.portfolio__link img {
 	height: 36px;
 	width: 36px;
 }
 
-.portfolioText, .portfolioTextG {
+.portfolio__text {
 	margin-left: 0.5em;
+	width: 250px;
 }
 
-.portfolioTextG::before {
-	content: "/ ";
-} 
-
-@media  (max-width: 1280px) {
-	
-	.folder {
-		flex-direction: column;
-		height: max-content;
+@media (max-width: 1280px) {
+	body {
+		margin: 1em 1em 0;
 	}
 
-	#aboutFolder {
-		padding: 0 0 0 2em;
+	.tab {
+		width: 100px;
+		font-size: 1rem;
+	}
+
+	.folder {
+		flex-direction: column;
+		gap: 1em;
+	}
+
+	#folder--about {
+		padding: 1em 1em 0;
 		margin-bottom: 1em;
 	}
 
-	#portfolioFolder {
+	#folder--portfolio {
 		padding: 2em 0em 2em 1em;
 	}
-	
-	#portfolioFolder ul {
+
+	#folder--portfolio ul {
 		padding: 0;
 	}
 
 	.description {
 		font-size: 1rem;
-		padding: 0;	
+		padding: 0;
 	}
 
 	.highlight {
 		font-size: 1.3rem;
-	}
-	
-	.mobilePhoto {
-		margin-top: 2em;
-		display: inline-block;
-		width: 270px;
 	}
 
 	.name {
 		font-size: 2rem;
 	}
 
-	.frame {
-		display: none;
+	.contact__icon {
+		margin: 2em 1em 0 0;
+	}
+
+	.photo {
+		order: -1;
+		height: 200px;
+		width: 200px;
 	}
 
 	.skills {
 		padding-top: 1em;
 	}
 
-    .portfolioHeader {
-        margin: 0em 0em 0em 1em;
-    }
+	.header--portfolio {
+		margin: 0em 0em 0em 1em;
+	}
+
+	.header--list {
+		font-size: 1.5rem;
+	}
 }
