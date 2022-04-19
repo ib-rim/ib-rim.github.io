@@ -198,6 +198,10 @@ a:visited {
 	color: var(--white);
 }
 
+.portfolio__link:hover {
+	cursor: pointer;
+}
+
 .portfolio__link img {
 	height: 36px;
 	width: 36px;
