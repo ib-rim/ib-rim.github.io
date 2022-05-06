@@ -283,3 +283,33 @@ a:visited {
 		font-size: 1rem;
 	}
 }
+
+.html {
+	color: rgb(244, 60, 60);
+	font-weight: bold;
+}
+
+.css {
+	color: rgb(230, 150, 164);
+	font-weight: bold;
+}
+
+.js {
+	color: rgb(253, 173, 24);
+	font-weight: bold;
+}
+
+.react {
+	color: rgb(81, 210, 216);
+	font-weight: bold;
+}
+
+.django {
+	color: rgb(59, 163, 24);
+	font-weight: bold;
+}
+
+.unity {
+	color: rgb(140, 24, 163);
+	font-weight: bold;
+}
