@@ -1,102 +1,53 @@
 @font-face {
-	font-family: "Milliard";
-	src: url("../fonts/Rene\ Bieder\ \ Milliard\ ExtraLight.woff");
+	font-family: "Vercetti";
+	src: url("../fonts/Vercetti-Regular.woff");
 }
 
 @font-face {
-	font-family: "MilliardBold";
-	src: url("../fonts/Rene\ Bieder\ \ Milliard\ Medium.woff");
-}
-
-@font-face {
-	font-family: "MilliardExtraBold";
-	src: url("../fonts/Rene\ Bieder\ \ Milliard\ ExtraBold.woff");
+	font-family: "Vercetti";
+	src: url("../fonts/Vercetti-Regular.woff2");
 }
 
 :root {
 	--shadow: 0px 8px 16px 0 rgba(0, 0, 0, 0.2);
-	--background-blue: #105893;
-	--about-blue: #082c49;
-	--portfolio-blue: #1b3b5b;
-	--white: #ffffff;
+	--background-color: #856fd3;
+	--primary-color: #3e75c3;
+	--secondary-color: #ffa83b;
+	--tertiary-color: #f4f1e6;
 }
 
 html {
-	background-color: var(--background-blue);
-	font-family: "Milliard";
-	color: var(--white);
+	background-color: var(--background-color);
+	font-family: "Vercetti";
+	color: var(--tertiary-color);
 }
 
 body {
 	margin: 3em 3em 0;
 }
 
-/* FOLDER PORTFOLIO */
-
-.folder {
-	display: flex;
-	gap: 2em;
-
-	min-height: 80vh;
-	padding: 0em 2em 0em 4em;
-
-	box-shadow: var(--shadow);
-
-	font-size: 1.25rem;
-}
-
-#folder--about {
-	background-color: var(--about-blue);
-}
-
-#folder--portfolio {
-	background-color: var(--portfolio-blue);
-	display: none;
-	padding: 0em 2em 0em 2em;
-	flex: 0 0 auto;
-}
-
-.tab {
-	display: inline-block;
-
-	margin-right: 0.5em;
-	padding: 0.4em 0 0.2em;
-	width: 150px;
-
-	font-family: "MilliardBold";
-	font-size: 1.5rem;
-	text-align: center;
-}
-
-#tab--about {
-	background-color: var(--about-blue);
-}
-
-#tab--portfolio {
-	background-color: var(--portfolio-blue);
-}
-
 .name {
-	font-family: MilliardBold;
+	font-family: Vercetti;
 	font-size: 3rem;
 }
 
 .highlight {
-	font-family: "MilliardBold";
+	font-family: "Vercetti";
 	font-size: 1.5rem;
 	padding: 4px;
 }
 
-a {
+/* a {
+	color: inherit;
 	text-decoration: none;
-	font-family: "MilliardBold";
+	font-family: "Vercetti";
 	font-size: 1.5rem;
 	padding: 4px;
 }
 
 a:visited {
-	color: var(--white);
-}
+	color: inherit;
+} */
 
 .description {
 	display: inline-block;
@@ -109,8 +60,8 @@ a:visited {
 }
 
 .contact__icon {
-	height: 50px;
-	width: 50px;
+	height: 48px;
+	width: 48px;
 	margin: 3em 1em 0 0;
 }
 
@@ -118,7 +69,7 @@ a:visited {
 	height: 400px;
 	width: 400px;
 	border-radius: 500px;
-	border: 3px solid whitesmoke;
+	border: 5px solid var(--tertiary-color);
 	box-shadow: var(--shadow);
 	align-self: center;
 }
@@ -132,41 +83,69 @@ a:visited {
 }
 
 .header--list {
-	font-family: "MilliardBold";
+	font-family: "Vercetti";
 	font-size: 2rem;
 }
 
-.webdev {
-	width: 500px;
-}
+/* PROJECT CARD */
 
 .project {
-	opacity: 0;
-	transition: 1s;
-	background-color: rgb(8, 2, 38);
+	--image-height: 12em;
+	--animation-length: 1.5s;
+
+	position: relative;
+	background-color: var(--tertiary-color);
 	box-shadow: var(--shadow);
-	width: 100%;
-	margin: 2em 0 2em 2em;
+	border: 3px solid var(--secondary-color);
 	border-radius: 15px;
 	overflow: hidden;
+	color: black;
+	max-width: 30em;
 }
 
-.project__image {
+.project__figure {
+	position: relative;
 	width: 100%;
-	height: 12em;
-	object-fit: contain;
+	height: var(--image-height);
 	background-color: black;
 }
 
-.project__description {
-	display: flex;
-	flex-direction: column;
-	gap: 1em;
-	padding: 2em;
+.project__image {
+	width: inherit;
+	height: inherit;
+	object-fit: contain;
 }
 
-.project__header {
-	font-family: "MilliardBold";
+.project__figure::before {
+	position: absolute;
+	content: '';
+	height: 50em;
+	background-color: var(--tertiary-color);
+	width: 100%;
+	bottom: var(--image-height);
+}
+
+.project__content {
+	min-height: 20em;
+	display: grid;
+	gap: 1em;
+	grid-template-rows: auto 1fr auto;
+	padding: 1em;
+}
+
+.project__title {
+	font-family: "Vercetti";
+	font-weight: bold;
+}
+
+.project__description {
+	margin-left: 1em;
+}
+
+.project__links {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 }
 
 .project__link--git {
@@ -175,8 +154,27 @@ a:visited {
 }
 
 .project__link--deploy {
+	font-weight: bold;
 	font-size: 1.3rem;
 	text-decoration: underline;
+	color: var(--primary-color);
+}
+
+.project__navs {
+	display: flex;
+	justify-content: center;
+	gap: 1em;
+	padding: 1em;
+}
+
+.project__nav {
+	background: var(--secondary-color);
+	border-radius: 3px;
+	border: none; 
+	font-size: 1.5rem;
+	color: var(--tertiary-color);
+	padding: 0 0.5em;
+	box-shadow: var(--shadow);
 }
 
 /* Portfolio */
@@ -194,17 +192,12 @@ a:visited {
 	margin: 0.3em 0em 0em 0em;
 
 	font-size: 1.5rem;
-	font-family: "MilliardBold";
-	color: var(--white);
+	font-family: "Vercetti";
+	color: var(--tertiary-color);
 }
 
 .portfolio__link:hover {
 	cursor: pointer;
-}
-
-.portfolio__link img {
-	height: 36px;
-	width: 36px;
 }
 
 .portfolio__text {
@@ -275,11 +268,11 @@ a:visited {
 		margin: 0em;
 	}
 
-	.project__header {
+	.project__title {
 		font-size: 1.5rem;
 	}
 
-	.project__text {
+	.project__description {
 		font-size: 1rem;
 	}
 }
@@ -312,4 +305,40 @@ a:visited {
 .unity {
 	color: rgb(140, 24, 163);
 	font-weight: bold;
+}
+
+/* ANIMATIONS */
+
+.vertical-wipe {
+	animation-duration: var(--animation-length);
+	animation-name: verticalWipe;
+}
+
+@keyframes verticalWipe {
+	0%, 100% {
+		/* filter: brightness(0.1); */
+		position: absolute;
+	}
+
+	50% {
+		/* filter: brightness(0); */
+		position: absolute;
+		margin-top: 50em;
+	}
+
+	75% {
+		/* filter: brightness(0.1); */
+		position: absolute;
+	}
+}
+
+.freeze-in-place {
+	animation-duration: var(--animation-length);
+	animation-name: freezeInPlace;
+}
+
+@keyframes freezeInPlace {
+	0%, 100% {
+		margin-top: calc(var(--image-height));
+	}
 }
