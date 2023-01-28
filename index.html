@@ -28,54 +28,82 @@
 
 <body>
 	<div class="container">
-		<section class="description">
-			<div class="contact">
-				<a href="https://uk.linkedin.com/in/ibrahim-bashir-250953197" target="_blank" rel="noopener noreferrer">
-					<img class="contact__icon" src="img/linked.png" />
-				</a>
-				<a href="mailto:ib.bashir@hotmail.com" target="_blank" rel="noopener noreferrer">
-					<img class="contact__icon" src="img/email.png" />
-				</a>
-				<a href="https://github.com/ib-rim" target="_blank" rel="noopener noreferrer">
-					<img class="contact__icon" src="img/github4.png" />
-				</a>
-			</div>
-			<h1 class="name">Ibrahim Bashir</h1>
-		</section>
-		<figure class="photo__figure u-circle-border">
-			<img class="photo__image u-circle-border" src="/img/me.jpg"
-				alt="Photo of Ibrahim Bashir with glasses on and smiling at the camera" />
-		</figure>
-		<section class="skills">
-			<h2 class="header--list">Skillset:</h2>
-			<ul>
-				<li>React / Vue / Django</li>
-				<li>SASS</li>
-				<li>Git (GitHub / BitBucket)</li>
-				<li>WordPress</li>
-				<li>Google Analytics</li>
-				<li>Unity2D with C#</li>
-			</ul>
-		</section>
-		<div class="project__navs">
-			<button id="js-project__nav--left" class="project__nav">←</button>
-			<button id="js-project__nav--right" class="project__nav">→</button>
-		</div>
-		<aside class="project">
-			<figure class="project__figure">
-				<img class="project__image" src="" alt="" />
-			</figure>
-			<section class="project__content">
-				<h2 class="project__title"></h2>
-				<p class="project__description"></p>
-				<div class="project__links">
-					<a class="project__link--git" href="" target="_blank" rel="noopener noreferrer">
-						<img src="img/github4.png" alt="" />
+		<div class="about-me">
+			<header class="header">
+				<div class="contact">
+					<a href="https://uk.linkedin.com/in/ibrahim-bashir-250953197" target="_blank"
+						rel="noopener noreferrer">
+						<img class="contact__icon" src="img/linked.png" />
 					</a>
-					<a class="project__link--deploy" href="" target="_blank" rel="noopener noreferrer"></a>
+					<a href="mailto:ib.bashir@hotmail.com" target="_blank" rel="noopener noreferrer">
+						<img class="contact__icon" src="img/email.png" />
+					</a>
+					<a href="https://github.com/ib-rim" target="_blank" rel="noopener noreferrer">
+						<img class="contact__icon" src="img/github4.png" />
+					</a>
+				</div>
+				<p class="name">Ibrahim Bashir</p>
+			</header>
+			<figure class="photo__figure u-circle-border">
+				<img class="photo__image u-circle-border" src="/img/me.jpg"
+					alt="Photo of Ibrahim Bashir with glasses on and smiling at the camera" />
+			</figure>
+			<section class="skills-section">
+				<h2 class="heading">Skillset:</h2>
+				<div class="ticker-wrap">
+					<div class="ticker">
+						<!-- <li>React / Vue / Django</li>
+							<li>SASS</li>
+							<li>Git (GitHub / BitBucket)</li>
+							<li>WordPress</li>
+							<li>Google Analytics</li>
+							<li>Unity2D with C#</li> -->
+						<div class="ticker__item">React</div>
+						<div class="ticker__item">Vue</div>
+						<div class="ticker__item">Django</div>
+						<div class="ticker__item">SASS</div>
+						<div class="ticker__item">Git</div>
+						<div class="ticker__item">WordPress</div>
+						<div class="ticker__item">Google Analytics</div>
+						<div class="ticker__item">Unity2D</div>
+						<div class="ticker__item">C#</div>
+					</div>
+					<div class="ticker ticker2">
+						<div class="ticker__item">React</div>
+						<div class="ticker__item">Vue</div>
+						<div class="ticker__item">Django</div>
+						<div class="ticker__item">SASS</div>
+						<div class="ticker__item">Git</div>
+						<div class="ticker__item">WordPress</div>
+						<div class="ticker__item">Google Analytics</div>
+						<div class="ticker__item">Unity2D</div>
+						<div class="ticker__item">C#</div>
+					</div>
 				</div>
 			</section>
-		</aside>
+		</div>
+		<section class="portfolio">
+			<h2 class="heading">Portfolio:</h2>
+			<div class="project">
+				<figure class="project__figure">
+					<img class="project__image" src="" alt="" />
+				</figure>
+				<section class="project__content">
+					<h2 class="project__title"></h2>
+					<p class="project__description"></p>
+					<div class="project__links">
+						<a class="project__link--git" href="" target="_blank" rel="noopener noreferrer">
+							<img src="img/github4.png" alt="" />
+						</a>
+						<a class="project__link--deploy" href="" target="_blank" rel="noopener noreferrer"></a>
+					</div>
+				</section>
+			</div>
+			<div class="project__navs">
+				<button id="js-project__nav--left" class="project__nav">←</button>
+				<button id="js-project__nav--right" class="project__nav">→</button>
+			</div>
+		</section>
 	</div>
 </body>
 
