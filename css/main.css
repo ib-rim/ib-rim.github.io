@@ -1,172 +1,207 @@
 @font-face {
-	font-family: "Milliard";
-	src: url("../fonts/Rene\ Bieder\ \ Milliard\ ExtraLight.woff");
+	font-family: "Vercetti";
+	src: url("../fonts/Vercetti-Regular.woff");
 }
 
 @font-face {
-	font-family: "MilliardBold";
-	src: url("../fonts/Rene\ Bieder\ \ Milliard\ Medium.woff");
-}
-
-@font-face {
-	font-family: "MilliardExtraBold";
-	src: url("../fonts/Rene\ Bieder\ \ Milliard\ ExtraBold.woff");
+	font-family: "Vercetti";
+	src: url("../fonts/Vercetti-Regular.woff2");
 }
 
 :root {
 	--shadow: 0px 8px 16px 0 rgba(0, 0, 0, 0.2);
-	--background-blue: #105893;
-	--about-blue: #082c49;
-	--portfolio-blue: #1b3b5b;
-	--white: #ffffff;
+	--background-color: #7a478d;
+	--primary-color: #3e75c3;
+	--secondary-color: #ffa83b;
+	--tertiary-color: #f4f1e6;
 }
 
 html {
-	background-color: var(--background-blue);
-	font-family: "Milliard";
-	color: var(--white);
+	background-color: var(--background-color);
+	color: var(--tertiary-color);
+	font-family: "Vercetti";
 }
 
-body {
-	margin: 3em 3em 0;
-}
-
-/* FOLDER PORTFOLIO */
-
-.folder {
-	display: flex;
-	gap: 2em;
-
-	min-height: 80vh;
-	padding: 0em 2em 0em 4em;
-
-	box-shadow: var(--shadow);
-
-	font-size: 1.25rem;
-}
-
-#folder--about {
-	background-color: var(--about-blue);
-}
-
-#folder--portfolio {
-	background-color: var(--portfolio-blue);
-	display: none;
-	padding: 0em 2em 0em 2em;
-	flex: 0 0 auto;
-}
-
-.tab {
-	display: inline-block;
-
-	margin-right: 0.5em;
-	padding: 0.4em 0 0.2em;
-	width: 150px;
-
-	font-family: "MilliardBold";
-	font-size: 1.5rem;
-	text-align: center;
-}
-
-#tab--about {
-	background-color: var(--about-blue);
-}
-
-#tab--portfolio {
-	background-color: var(--portfolio-blue);
-}
-
-.name {
-	font-family: MilliardBold;
-	font-size: 3rem;
-}
-
-.highlight {
-	font-family: "MilliardBold";
-	font-size: 1.5rem;
-	padding: 4px;
-}
-
-a {
-	text-decoration: none;
-	font-family: "MilliardBold";
-	font-size: 1.5rem;
-	padding: 4px;
+button {
+	cursor: pointer;
 }
 
 a:visited {
-	color: var(--white);
+	color: var(--primary-color);
 }
 
-.description {
-	display: inline-block;
-	padding: 0em 2em;
-	align-self: center;
+.container {
+	display: grid;
+	justify-items: center;
+	padding: 1em;
+}
+
+.about-me {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.header {
+	display: grid;
+	width: 300px;
+	grid-template-columns: 1fr 2fr;
 }
 
 .contact {
-	display: flex;
+	display: grid;
+	gap: 1em;
+	justify-content: center;
 }
 
 .contact__icon {
-	height: 50px;
-	width: 50px;
-	margin: 3em 1em 0 0;
+	height: 48px;
+	width: 48px;
 }
 
-.photo {
-	height: 400px;
-	width: 400px;
-	border-radius: 500px;
-	border: 3px solid whitesmoke;
+.name {
+	font-family: Vercetti;
+	font-size: 3rem;
+}
+
+.photo__figure {
+	position: relative;
+	height: 300px;
+	width: 300px;
+	border: 5px solid var(--secondary-color);
 	box-shadow: var(--shadow);
-	align-self: center;
+
+	--design-border-width: 10px;
+	--design-height: 120%;
+	--design-width: 100vw;
+	--design-width: 100dvw;
+
+	--design-border-radius: calc(var(--design-border-width)*5);
+	--design-offset-y: calc(calc(50% - var(--design-height)) + (var(--design-border-width)/2));
+	--design-offset-x: calc(100% - var(--design-width));
 }
 
-.photo--mobile {
-	display: none;
+.photo__figure::before {
+	content: '';
+	position: absolute;
+	z-index: -1;
+	top: var(--design-offset-y);
+	height: var(--design-height);
+	background: none;
+	right: calc(var(--design-offset-x) / 2);
+	width: var(--design-width);
+	border: var(--design-border-width) solid var(--secondary-color);
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	border-bottom: var(--design-border-width) solid var(--secondary-color);
 }
 
-.skills {
-	align-self: center;
+/* SKILLS */
+
+.skills-section {
+	width: fit-content;
+	padding-top: 1em;
+	font-size: 1.2rem;
 }
 
-.header--list {
-	font-family: "MilliardBold";
-	font-size: 2rem;
+.ticker-wrap {
+	position: relative;
+	margin-block: 1em;
+	height: 30px;
+	width: 15em;
+	overflow-x: hidden;
+	background-color: #323232;
+	box-shadow: var(--shadow);
 }
 
-.webdev {
-	width: 500px;
+.ticker {
+	position: absolute;
+	left: 100%;
+	display: flex;
+	margin: 0;
+	animation-name: ticker;
+	animation-duration: 20s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
 }
+
+.ticker2 {
+	animation-delay: 10s;
+}
+
+.ticker__item {
+	margin-left: 0.5em;
+	min-width: max-content;
+}
+
+.ticker__item::before {
+	content: '• ';
+	color: var(--secondary-color);
+}
+
+/* PROJECT CARD */
 
 .project {
-	opacity: 0;
-	transition: 1s;
-	background-color: rgb(8, 2, 38);
+	--image-height: 12em;
+	--animation-length: 1.25s;
+
+	position: relative;
+	background-color: var(--tertiary-color);
 	box-shadow: var(--shadow);
-	width: 100%;
-	margin: 2em 0 2em 2em;
+	border: 4px solid var(--secondary-color);
 	border-radius: 15px;
 	overflow: hidden;
+	color: black;
+	max-width: 30em;
+	margin-block: 1em;
 }
 
-.project__image {
+.project__figure {
+	position: relative;
 	width: 100%;
-	height: 12em;
-	object-fit: contain;
+	height: var(--image-height);
 	background-color: black;
 }
 
-.project__description {
-	display: flex;
-	flex-direction: column;
-	gap: 1em;
-	padding: 2em;
+.project__image {
+	width: inherit;
+	height: inherit;
+	object-fit: contain;
+	color: white;
 }
 
-.project__header {
-	font-family: "MilliardBold";
+.project__figure::before {
+	position: absolute;
+	content: '';
+	height: 50em;
+	background-color: var(--tertiary-color);
+	width: 100%;
+	bottom: var(--image-height);
+}
+
+.project__content {
+	min-height: 20em;
+	display: grid;
+	gap: 1em;
+	grid-template-rows: auto 1fr auto;
+	padding: 1em;
+}
+
+.project__title {
+	font-family: "Vercetti";
+	font-weight: bold;
+}
+
+.project__description {
+	margin-left: 1em;
+}
+
+.project__links {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 }
 
 .project__link--git {
@@ -175,141 +210,181 @@ a:visited {
 }
 
 .project__link--deploy {
+	font-weight: bold;
 	font-size: 1.3rem;
 	text-decoration: underline;
+	color: var(--primary-color);
 }
 
-/* Portfolio */
-
-.portfolio__links {
-	margin-top: 2em;
-	list-style-type: square;
-}
-
-.portfolio__link {
+.project__navs {
 	display: flex;
-	background: none;
+	justify-content: center;
+	gap: 1em;
+}
+
+.project__nav {
+	background: var(--secondary-color);
+	border-radius: 3px;
 	border: none;
-
-	margin: 0.3em 0em 0em 0em;
-
 	font-size: 1.5rem;
-	font-family: "MilliardBold";
-	color: var(--white);
+	color: var(--tertiary-color);
+	padding: 0 0.5em;
+	box-shadow: var(--shadow);
 }
 
-.portfolio__link:hover {
-	cursor: pointer;
-}
+@media (min-width: 800px) {
 
-.portfolio__link img {
-	height: 36px;
-	width: 36px;
-}
-
-.portfolio__text {
-	margin-left: 0.5em;
-	width: 250px;
-}
-
-@media (max-width: 1280px) {
-	body {
-		margin: 1em 1em 0;
-	}
-
-	.tab {
-		width: 100px;
-		font-size: 1rem;
-	}
-
-	.folder {
-		flex-direction: column;
-		padding: 1em 1em 0;
-		margin-bottom: 1em;
-		gap: 1em;
-	}
-
-	#folder--portfolio {
-		padding: 1em;
-	}
-
-	.description {
-		font-size: 1rem;
-		padding: 0;
-	}
-
-	.highlight {
-		font-size: 1.3rem;
-	}
-
-	.name {
-		font-size: 2rem;
-	}
-
-	.contact__icon {
-		margin: 2em 1em 0 0;
-	}
-
-	.photo {
-		order: -1;
-		height: 200px;
-		width: 200px;
-	}
-
-	.skills {
-		padding-top: 1em;
-		font-size: 1.2rem;
-	}
-
-	.header--list {
-		font-size: 1.5rem;
-	}
-
-	/* PORTFOLIO  */
-
-	.portfolio__link {
-		font-size: 1.2rem;
+	.container {
+		grid-template-columns: 1fr 1fr;
+		overflow-y: hidden;
+		min-height: 100vh;
+		min-height: 100dvh;
 	}
 
 	.project {
-		margin: 0em;
-	}
-
-	.project__header {
-		font-size: 1.5rem;
-	}
-
-	.project__text {
-		font-size: 1rem;
+		min-width: 30em;
 	}
 }
 
-.html {
+@media (min-width: 1120px) {
+	.photo__figure {
+		--design-border-width: 10px;
+		--design-height: 150%;
+		--design-width: 150%;
+
+		--design-border-radius: calc(var(--design-border-width)*5);
+		--design-offset-y: calc(calc(50% - var(--design-height)) + (var(--design-border-width)/2));
+		--design-offset-x: calc(100% - var(--design-width));
+	}
+
+	.photo__figure::before {
+		content: '';
+		position: absolute;
+		z-index: -1;
+		top: var(--design-offset-y);
+		height: var(--design-height);
+		background: none;
+		right: var(--design-offset-x);
+		width: var(--design-width);
+		border: var(--design-border-width) solid var(--secondary-color);
+		border-top: none;
+		border-left: none;
+		border-bottom: var(--design-border-width) solid var(--secondary-color);
+		border-bottom-right-radius: var(--design-border-radius);
+	}
+
+	.photo__figure::after {
+		content: '';
+		position: absolute;
+		z-index: -1;
+		bottom: var(--design-offset-y);
+		height: var(--design-height);
+		background: none;
+		left: var(--design-offset-x);
+		width: var(--design-width);
+		border: var(--design-border-width) solid var(--secondary-color);
+		border-top: var(--design-border-width) solid var(--secondary-color);
+		border-bottom: none;
+		border-right: none;
+		border-top-left-radius: var(--design-border-radius);
+	}
+}
+
+/* ANIMATIONS */
+
+.vertical-wipe {
+	animation-duration: var(--animation-length);
+	animation-name: verticalWipe;
+}
+
+@keyframes verticalWipe {
+
+	0%,
+	100% {
+		position: absolute;
+	}
+
+	50% {
+		position: absolute;
+		margin-top: 50em;
+	}
+
+	75% {
+		position: absolute;
+	}
+}
+
+.freeze-in-place {
+	animation-duration: var(--animation-length);
+	animation-name: freezeInPlace;
+}
+
+@keyframes freezeInPlace {
+
+	0%,
+	100% {
+		margin-top: calc(var(--image-height));
+	}
+}
+
+@keyframes ticker {
+	0% {
+		-webkit-transform: translate3d(0, 0, 0);
+		transform: translate3d(0, 0, 0);
+		visibility: visible;
+	}
+
+	100% {
+		-webkit-transform: translate3d(-200%, 0, 0);
+		transform: translate3d(-200%, 0, 0);
+	}
+}
+
+/* Utility */
+
+.u-circle-border {
+	border-radius: 100%;
+}
+
+.u-highlight {
+	font-weight: bold;
+	background-color: #323232;
+	padding: 0.1em 0.3em;
+	border-radius: 5px;
+}
+
+.u-html {
 	color: rgb(244, 60, 60);
-	font-weight: bold;
 }
 
-.css {
+.u-css {
 	color: rgb(230, 150, 164);
-	font-weight: bold;
 }
 
-.js {
+.u-js {
 	color: rgb(253, 173, 24);
-	font-weight: bold;
 }
 
-.react {
+.u-react {
 	color: rgb(81, 210, 216);
-	font-weight: bold;
 }
 
-.django {
+.u-django {
 	color: rgb(59, 163, 24);
-	font-weight: bold;
 }
 
-.unity {
+.u-unity {
 	color: rgb(140, 24, 163);
-	font-weight: bold;
+}
+
+.u-sass {
+	color: #cf649a;
+}
+
+.u-php {
+	color: #7a86b8;
+}
+
+.u-c-sharp {
+	color: #b377dc;
 }
