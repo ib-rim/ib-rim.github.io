@@ -10,15 +10,16 @@
 
 :root {
 	--shadow: 0px 8px 16px 0 rgba(0, 0, 0, 0.2);
-	--background-color: #7a478d;
-	--primary-color: #3e75c3;
-	--secondary-color: #ffa83b;
-	--tertiary-color: #f4f1e6;
+	--primary-color: #7a478d;
+	--secondary-color: #f5a747;
+	--white-color: #f4f1e6;
+	--black-color: #323232;
+	--link-color: #3e75c3;
 }
 
 html {
-	background-color: var(--background-color);
-	color: var(--tertiary-color);
+	background-color: var(--primary-color);
+	color: var(--white-color);
 	font-family: "Vercetti";
 }
 
@@ -27,13 +28,18 @@ button {
 }
 
 a:visited {
-	color: var(--primary-color);
+	color: var(--link-color);
 }
 
 .container {
 	display: grid;
 	justify-items: center;
-	padding: 1em;
+	padding-top: 1em;
+	overflow-x: hidden;
+}
+
+.heading {
+	width: fit-content;
 }
 
 .about-me {
@@ -112,7 +118,7 @@ a:visited {
 	height: 30px;
 	width: 15em;
 	overflow-x: hidden;
-	background-color: #323232;
+	background-color: var(--black-color);
 	box-shadow: var(--shadow);
 }
 
@@ -143,18 +149,51 @@ a:visited {
 
 /* PROJECT CARD */
 
+.portfolio {
+	background-color: var(--secondary-color);
+	color: var(--black-color);
+	position: relative;
+	padding: 1em;
+	margin-top: 3em;
+	width: 100%;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.portfolio > * {
+	margin: 0 auto;
+}
+
+.portfolio::after {
+	--triangle-height: 30px;
+	--triangle-offset: 5em;
+	
+	position: absolute;
+	content: '';
+	height: var(--triangle-height);
+	width: calc(100% + var(--triangle-offset));
+	top: calc(0px - var(--triangle-height));
+	background-color: var(--secondary-color);
+	left: calc((0px - var(--triangle-offset)) / 2);
+	mask-image: url('/svg/triangle-horizontal.svg');
+	-webkit-mask-image: url('/svg/triangle-horizontal.svg');
+	rotate: 180deg;
+}
+
 .project {
 	--image-height: 12em;
 	--animation-length: 1.25s;
 
 	position: relative;
-	background-color: var(--tertiary-color);
+	background-color: var(--white-color);
 	box-shadow: var(--shadow);
-	border: 4px solid var(--secondary-color);
+	border: 4px solid var(--primary-color);
 	border-radius: 15px;
-	overflow: hidden;
-	color: black;
 	max-width: 30em;
+	overflow: hidden;
 	margin-block: 1em;
 }
 
@@ -162,7 +201,7 @@ a:visited {
 	position: relative;
 	width: 100%;
 	height: var(--image-height);
-	background-color: black;
+	background-color: var(--black-color);
 }
 
 .project__image {
@@ -176,7 +215,7 @@ a:visited {
 	position: absolute;
 	content: '';
 	height: 50em;
-	background-color: var(--tertiary-color);
+	background-color: var(--white-color);
 	width: 100%;
 	bottom: var(--image-height);
 }
@@ -213,21 +252,20 @@ a:visited {
 	font-weight: bold;
 	font-size: 1.3rem;
 	text-decoration: underline;
-	color: var(--primary-color);
+	color: var(--link-color);
 }
 
 .project__navs {
 	display: flex;
-	justify-content: center;
 	gap: 1em;
 }
 
 .project__nav {
-	background: var(--secondary-color);
+	background: var(--primary-color);
 	border-radius: 3px;
-	border: none;
 	font-size: 1.5rem;
-	color: var(--tertiary-color);
+	border: none;
+	color: var(--white-color);
 	padding: 0 0.5em;
 	box-shadow: var(--shadow);
 }
@@ -239,6 +277,15 @@ a:visited {
 		overflow-y: hidden;
 		min-height: 100vh;
 		min-height: 100dvh;
+		padding: 0em;
+	}
+
+	.container > * {
+		width: 100%;
+	}
+
+	.portfolio {
+		margin-top: 0;
 	}
 
 	.project {
@@ -249,7 +296,8 @@ a:visited {
 @media (min-width: 1120px) {
 	.photo__figure {
 		--design-border-width: 10px;
-		--design-height: 150%;
+		--design-height: 100dvh;
+		--design-height: 100vh;
 		--design-width: 150%;
 
 		--design-border-radius: calc(var(--design-border-width)*5);
@@ -287,6 +335,19 @@ a:visited {
 		border-bottom: none;
 		border-right: none;
 		border-top-left-radius: var(--design-border-radius);
+	}
+
+	.portfolio::after {
+		--triangle-height: 40px;
+		--triangle-offset: 5em;
+		
+		width: var(--triangle-height);
+		height: calc(100% + var(--triangle-offset));
+		left: calc(0px - var(--triangle-height));
+		bottom: calc((0px - var(--triangle-offset)) / 2);
+		mask-image: url('/svg/triangle-vertical.svg');
+		-webkit-mask-image: url('/svg/triangle-vertical.svg');
+		rotate: 180deg;
 	}
 }
 
@@ -348,33 +409,33 @@ a:visited {
 
 .u-highlight {
 	font-weight: bold;
-	background-color: #323232;
+	background-color: var(--black-color);
 	padding: 0.1em 0.3em;
 	border-radius: 5px;
 }
 
 .u-html {
-	color: rgb(244, 60, 60);
+	color: #f43c3c;
 }
 
 .u-css {
-	color: rgb(230, 150, 164);
+	color: #e696a4;
 }
 
 .u-js {
-	color: rgb(253, 173, 24);
+	color: #fdad18;
 }
 
 .u-react {
-	color: rgb(81, 210, 216);
+	color: #51d2d8;
 }
 
 .u-django {
-	color: rgb(59, 163, 24);
+	color: #3ba318;
 }
 
 .u-unity {
-	color: rgb(140, 24, 163);
+	color: #8c18a3;
 }
 
 .u-sass {
