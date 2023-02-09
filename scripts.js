@@ -32,12 +32,12 @@ let projects = [
         deployLink: "https://ib-rim.github.io/learn-CFOP",
     },
     {
-        title: "Singleplayer Blackjack Web App",
-        description: "Created with vanilla <span class='u-highlight u-html'>HTML</span>, <span class='u-highlight u-css'>CSS</span> and <span class='u-highlight u-js'>JS</span>. The goal is to get the value of your hand as close to 21 as possible without going over. If the value goes over 21, you are bust and you lose.",
+        title: "Card Games Web App",
+        description: "Created with <span class='u-highlight u-nextjs'>NextJS</span>. Currently only has a singleplayer blackjack game where the goal is to get the value of your hand as close to 21 as possible without going over. If the value goes over 21, you are bust and you lose. Other card games are in progress.",
         src: "/assets/img/blackjack.png",
         alt: "The hand is Eight of Hearts and Ace of Clubs with options to Hit, Stand and Reset.",
-        gitLink: "https://github.com/ib-rim/blackjack",
-        deployLink: "https://ib-rim.github.io/blackjack/",
+        gitLink: "https://github.com/ib-rim/card-games",
+        deployLink: "https://ib-rim.github.io/card-games/",
     },
     {
         title: "The Four Trials",
