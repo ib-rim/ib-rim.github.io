@@ -1,11 +1,11 @@
 @font-face {
 	font-family: "Vercetti";
-	src: url("../assets/fonts/Vercetti-Regular.woff");
+	src: url("/assets/fonts/Vercetti-Regular.woff");
 }
 
 @font-face {
 	font-family: "Vercetti";
-	src: url("../assets/fonts/Vercetti-Regular.woff2");
+	src: url("/assets/fonts/Vercetti-Regular.woff2");
 }
 
 :root {
@@ -29,6 +29,83 @@ button {
 
 a:visited {
 	color: var(--link-color);
+}
+
+/* RESET CSS */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+	margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+	list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+	scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+	min-height: 100vh;
+	text-rendering: optimizeSpeed;
+	line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+	text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+	max-width: 100%;
+	display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+	font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+	html:focus-within {
+		scroll-behavior: auto;
+	}
+
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
+	}
 }
 
 .container {
@@ -62,6 +139,7 @@ a:visited {
 }
 
 .contact__icon {
+    position: relative;
 	height: 48px;
 	width: 48px;
 }
@@ -185,7 +263,7 @@ a:visited {
 
 .project {
 	--image-height: 12em;
-	--animation-length: 1.25s;
+	--animation-length: 0.8s;
 
 	position: relative;
 	background-color: var(--white-color);
@@ -244,6 +322,7 @@ a:visited {
 }
 
 .project__link--git {
+    position: relative;
 	height: 48px;
 	width: 48px;
 }
@@ -353,38 +432,45 @@ a:visited {
 
 /* ANIMATIONS */
 
-.vertical-wipe {
+.wipeLeft {
 	animation-duration: var(--animation-length);
-	animation-name: verticalWipe;
+	animation-name: wipeRight;
+    transition: ease-in-out;
 }
 
-@keyframes verticalWipe {
+@keyframes wipeLeft {
 
-	0%,
+    49.99% {
+        transform: translateX(-500px);
+	}
+
+    50% {
+        transform: translateX(500px);
+	}
+
 	100% {
-		position: absolute;
-	}
-
-	50% {
-		position: absolute;
-		margin-top: 50em;
-	}
-
-	75% {
-		position: absolute;
+        transform: translateX(0px);
 	}
 }
 
-.freeze-in-place {
+.wipeRight {
 	animation-duration: var(--animation-length);
-	animation-name: freezeInPlace;
+	animation-name: wipeLeft;
+    transition: ease-in-out;
 }
 
-@keyframes freezeInPlace {
+@keyframes wipeRight {
 
-	0%,
+    49.99% {
+        transform: translateX(500px);
+	}
+
+    50% {
+        transform: translateX(-500px);
+	}
+
 	100% {
-		margin-top: calc(var(--image-height));
+        transform: translateX(0px);
 	}
 }
 
