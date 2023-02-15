@@ -302,7 +302,13 @@ select {
         padding: 1em;
     }
 
-    &___links {
+    &__skills {
+        display: flex;
+        gap: 1em;
+        font-size: 1.1rem;
+    }
+
+    &__links {
         display: flex;
         align-items: center;
         justify-content: space-between;
