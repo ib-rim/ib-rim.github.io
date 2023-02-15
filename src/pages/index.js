@@ -127,19 +127,19 @@ export default function Home() {
                             <div className="contact">
                                 <a className="contact__icon" href="https://uk.linkedin.com/in/ibrahim-bashir-250953197" target="_blank"
                                     rel="noopener noreferrer">
-                                    <Image fill src="/assets/img/linked.png" alt="LinkedIn Logo" />
+                                    <Image fill sizes="48px" src="/assets/img/linked.png" alt="LinkedIn Logo" />
                                 </a>
                                 <a className="contact__icon" href="mailto:ib.bashir@hotmail.com" target="_blank" rel="noopener noreferrer">
-                                    <Image fill src="/assets/img/email.png" alt="Email Icon" />
+                                    <Image fill sizes="48px" src="/assets/img/email.png" alt="Email Icon" />
                                 </a>
                                 <a className="contact__icon" href="https://github.com/ib-rim" target="_blank" rel="noopener noreferrer">
-                                    <Image fill src="/assets/img/github4.png" alt="GitHub Logo" />
+                                    <Image fill sizes="48px" src="/assets/img/github4.png" alt="GitHub Logo" />
                                 </a>
                             </div>
                             <p className="name">Ibrahim Bashir</p>
                         </header>
                         <figure className="photo__figure u-circle-border">
-                            <Image fill className="u-circle-border" src="/assets/img/me.jpg"
+                            <Image fill sizes="300px" className="u-circle-border" src="/assets/img/me.jpg"
                                 alt="Photo of Ibrahim Bashir with glasses on and smiling at the camera" />
                         </figure>
                         <section className="skills-section">
@@ -176,7 +176,7 @@ export default function Home() {
                         <h2 className="heading">Portfolio</h2>
                         <div className="project">
                             <figure className={`project__figure ${animation}`}>
-                                <Image fill className="project__image" src={projects[currentProject].src} alt={projects[currentProject].alt} />
+                                <Image fill sizes="auto" className="project__image" src={projects[currentProject].src} alt={projects[currentProject].alt} />
                             </figure>
                             <section className={`project__content ${animation}`}>
                                 <h2 className="project__title">{projects[currentProject].title}</h2>
@@ -196,7 +196,7 @@ export default function Home() {
                                     {
                                         projects[currentProject].gitLink ?
                                             <a className="project__link--git" href={projects[currentProject].gitLink} target="_blank" rel="noopener noreferrer">
-                                                <Image fill src="/assets/img/github4.png" alt="" />
+                                                <Image fill sizes="48px" src="/assets/img/github4.png" alt="" />
                                             </a>
                                             :
                                             <></>
