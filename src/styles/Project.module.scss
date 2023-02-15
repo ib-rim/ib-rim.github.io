@@ -1,0 +1,179 @@
+.project {
+    --image-height: 12em;
+    --animation-length: 0.8s;
+
+    position: relative;
+    background-color: var(--white-color);
+    box-shadow: var(--shadow);
+    border: 4px solid var(--primary-color);
+    border-radius: 15px;
+    max-width: 30em;
+    overflow: hidden;
+    margin-block: 1em;
+}
+
+.figure {
+    position: relative;
+    width: 100%;
+    height: var(--image-height);
+    background-color: var(--black-color);
+
+    &::before {
+        position: absolute;
+        content: '';
+        height: 50em;
+        background-color: var(--white-color);
+        width: 100%;
+        bottom: var(--image-height);
+    }
+}
+
+.content {
+    min-height: 20em;
+    display: grid;
+    gap: 1em;
+    grid-template-rows: auto 1fr auto;
+    padding: 1em;
+}
+
+.image {
+    width: inherit;
+    height: inherit;
+    object-fit: contain;
+    color: white;
+}
+
+.skills {
+    display: flex;
+    gap: 1em;
+    font-size: 1.1rem;
+}
+
+.links {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &>.git {
+        position: relative;
+        height: 48px;
+        width: 48px;
+    }
+
+    &>.deploy {
+        font-weight: bold;
+        font-size: 1.3rem;
+        text-decoration: underline;
+        color: var(--link-color);
+    }
+}
+
+.navigation {
+    display: flex;
+    gap: 1em;
+
+    &>button {
+        background: var(--primary-color);
+        border-radius: 3px;
+        font-size: 1.5rem;
+        border: none;
+        color: var(--white-color);
+        padding: 0 0.5em;
+        box-shadow: var(--shadow);
+    }
+}
+
+/* ANIMATIONS */
+
+.figure[data-animation="wipeLeft"],
+.content[data-animation="wipeLeft"] {
+    animation-duration: var(--animation-length);
+    animation-name: wipeLeft;
+    transition: ease-in-out;
+}
+
+@keyframes wipeLeft {
+
+    49.99% {
+        transform: translateX(-500px);
+    }
+
+    50% {
+        transform: translateX(500px);
+    }
+
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+.figure[data-animation="wipeRight"],
+.content[data-animation="wipeRight"] {
+    animation-duration: var(--animation-length);
+    animation-name: wipeRight;
+    transition: ease-in-out;
+}
+
+@keyframes wipeRight {
+
+    49.99% {
+        transform: translateX(500px);
+    }
+
+    50% {
+        transform: translateX(-500px);
+    }
+
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+/* Skill Highlights */
+
+.highlight {
+    font-weight: bold;
+    background-color: var(--black-color);
+    padding: 0.1em 0.3em;
+    border-radius: 5px;
+}
+
+.highlight[data-skill="html"] {
+    color: #f43c3c;
+}
+
+.highlight[data-skill="css"] {
+    color: #e696a4;
+}
+
+.highlight[data-skill="js"] {
+    color: #fdad18;
+}
+
+.highlight[data-skill="react"] {
+    color: #51d2d8;
+}
+
+.highlight[data-skill="django"] {
+    color: #3ba318;
+}
+
+.highlight[data-skill="unity"] {
+    color: #8c18a3;
+}
+
+.highlight[data-skill="sass"] {
+    color: #cf649a;
+}
+
+.highlight[data-skill="php"] {
+    color: #7a86b8;
+}
+
+.highlight[data-skill="c-sharp"] {
+    color: #b377dc;
+}
+
+.highlight[data-skill="nextjs"] {
+    color: #ffffff;
+}

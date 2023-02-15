@@ -1,0 +1,323 @@
+@font-face {
+    font-family: "Vercetti";
+    src: url("/assets/fonts/Vercetti-Regular.woff");
+}
+
+@font-face {
+    font-family: "Vercetti";
+    src: url("/assets/fonts/Vercetti-Regular.woff2");
+}
+
+:root {
+    --shadow: 0px 8px 16px 0 rgba(0, 0, 0, 0.2);
+    --primary-color: #7a478d;
+    --secondary-color: #f5a747;
+    --white-color: #f4f1e6;
+    --black-color: #323232;
+    --link-color: #3e75c3;
+}
+
+html {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    font-family: "Vercetti";
+}
+
+button {
+    cursor: pointer;
+}
+
+a:visited {
+    color: var(--link-color);
+}
+
+/* RESET CSS */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+    margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+    list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+// HOME
+
+.container {
+    display: grid;
+    grid-auto-flow: dense;
+    justify-items: center;
+    padding-top: 1em;
+    overflow-x: hidden;
+
+    @media (min-width: 800px) {
+        grid-template-columns: 1fr 1fr;
+        overflow-y: hidden;
+        min-height: 100vh;
+        min-height: 100dvh;
+        padding: 0em;
+    }
+
+    &>* {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+
+        @media (min-width: 800px) {
+            height: 100vh;
+
+            //Swap 3rd and 4th columns on larger screens
+            &:nth-child(4n-1) {
+                grid-column: 2;
+            }
+        }
+
+        &:nth-child(n+2) {
+            padding: 1em;
+            margin-top: 3em;
+
+            @media (min-width: 1120px) {
+                padding: 0;
+                margin-top: 0;
+            }
+        }
+
+        &:nth-child(2n) {
+            background-color: var(--secondary-color);
+            color: var(--black-color);
+            position: relative;
+
+            --triangle-height-mobile: 30px;
+            --triangle-offset-mobile: 5em;
+
+            --triangle-height-desktop: 40px;
+            --triangle-offset-desktop: 0em;
+
+            &::before {
+                position: absolute;
+                content: '';
+                height: var(--triangle-height-mobile);
+                width: calc(100% + var(--triangle-offset-mobile));
+                top: calc(0px - var(--triangle-height-mobile));
+                background-color: var(--secondary-color);
+                left: calc((0px - var(--triangle-offset-mobile)) / 2);
+                mask-image: url('/assets/svg/triangle-horizontal.svg');
+                -webkit-mask-image: url('/assets/svg/triangle-horizontal.svg');
+                rotate: 180deg;
+
+                @media (min-width: 1120px) {
+                    width: var(--triangle-height-desktop);
+                    height: calc(100% + var(--triangle-offset-desktop));
+                    left: calc(0px - var(--triangle-height-desktop));
+                    top: calc((0px - var(--triangle-offset-desktop)) / 2);
+                    mask-image: url('/assets/svg/triangle-vertical.svg');
+                    -webkit-mask-image: url('/assets/svg/triangle-vertical.svg');
+                }
+            }
+
+            &::after {
+                position: absolute;
+                content: '';
+                background-color: var(--secondary-color);
+
+                height: var(--triangle-height-mobile);
+                width: calc(100% + var(--triangle-offset-mobile));
+                bottom: calc(0px - var(--triangle-height-mobile));
+                left: calc((0px - var(--triangle-offset-mobile)) / 2);
+                mask-image: url('/assets/svg/triangle-horizontal.svg');
+                -webkit-mask-image: url('/assets/svg/triangle-horizontal.svg');
+
+                @media (min-width: 1120px) {
+                    width: var(--triangle-height-desktop);
+                    height: calc(100% + var(--triangle-offset-desktop));
+                    left: auto;
+                    right: calc(0px - var(--triangle-height-desktop));
+                    bottom: calc((0px - var(--triangle-offset-desktop)) / 2);
+                    mask-image: url('/assets/svg/triangle-vertical.svg');
+                    -webkit-mask-image: url('/assets/svg/triangle-vertical.svg');
+                }
+            }
+
+            @media (max-width: 1120px) {
+                &:last-child::after {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+.header {
+    display: grid;
+    width: 300px;
+    grid-template-columns: 1fr 2fr;
+}
+
+.contact {
+    display: grid;
+    gap: 1em;
+    justify-content: center;
+}
+
+.contact__icon {
+    position: relative;
+    height: 48px;
+    width: 48px;
+}
+
+.name {
+    font-size: 3rem;
+}
+
+.photo__figure {
+    position: relative;
+    height: 300px;
+    width: 300px;
+    border: 5px solid var(--secondary-color);
+    box-shadow: var(--shadow);
+
+    --design-border-width: 10px;
+    --design-height: 120%;
+    --design-width: 100vw;
+    --design-width: 100dvw;
+
+    --design-border-radius: calc(var(--design-border-width)*5);
+    --design-offset-y: calc(calc(50% - var(--design-height)) + (var(--design-border-width)/2));
+    --design-offset-x: calc(100% - var(--design-width));
+
+    @media (min-width: 1120px) {
+        --design-border-width: 10px;
+        --design-height: 100dvh;
+        --design-height: 100vh;
+        --design-width: 150%;
+
+        --design-border-radius: calc(var(--design-border-width)*5);
+        --design-offset-y: calc(calc(50% - var(--design-height)) + (var(--design-border-width)/2));
+        --design-offset-x: calc(100% - var(--design-width));
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        top: var(--design-offset-y);
+        height: var(--design-height);
+        background: none;
+        right: calc(var(--design-offset-x) / 2);
+        width: var(--design-width);
+        border: var(--design-border-width) solid var(--secondary-color);
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: var(--design-border-width) solid var(--secondary-color);
+
+        @media (min-width: 1120px) {
+            right: var(--design-offset-x);
+            border: var(--design-border-width) solid var(--secondary-color);
+            border-top: none;
+            border-left: none;
+            border-bottom-right-radius: var(--design-border-radius);
+        }
+    }
+
+    &::after {
+        @media (min-width: 1120px) {
+            content: '';
+            position: absolute;
+            z-index: -1;
+            bottom: var(--design-offset-y);
+            height: var(--design-height);
+            background: none;
+            left: var(--design-offset-x);
+            width: var(--design-width);
+            border: var(--design-border-width) solid var(--secondary-color);
+            border-top: var(--design-border-width) solid var(--secondary-color);
+            border-bottom: none;
+            border-right: none;
+            border-top-left-radius: var(--design-border-radius);
+        }
+    }
+}
+
+/* SKILLS */
+
+.skills-section {
+    width: fit-content;
+    padding-top: 1em;
+    font-size: 1.2rem;
+}
+
+/* Utility */
+
+.u-circle-border {
+    border-radius: 100%;
+}
