@@ -1,3 +1,4 @@
+import styles from '@/styles/Project.module.scss';
 import { useState } from 'react';
 import Image from 'next/image';
 
@@ -73,7 +74,7 @@ export default function Project() {
     const [animationLength] = useState(800); //ms
 
     function previousProject() {
-        setAnimation('wipeLeft');
+        setAnimation('wipeRight');
         setTimeout(() => {
             setAnimation('');
         }, animationLength);
@@ -89,7 +90,7 @@ export default function Project() {
     }
 
     function nextProject() {
-        setAnimation('wipeRight');
+        setAnimation('wipeLeft');
         setTimeout(() => {
             setAnimation('');
         }, animationLength);
@@ -113,28 +114,28 @@ export default function Project() {
 
     return (
         <>
-            <div className="project">
-                <figure className={`project__figure ${animation}`}>
-                    <Image fill sizes="auto" className="project__image" src={projects[currentProject].src} alt={projects[currentProject].alt} />
+            <div className={styles.project}>
+                <figure data-animation={animation} className={styles.figure}>
+                    <Image fill sizes="auto" className={styles.image} src={projects[currentProject].src} alt={projects[currentProject].alt} />
                 </figure>
-                <section className={`project__content ${animation}`}>
-                    <h2 className="project__title">{projects[currentProject].title}</h2>
-                    <p className="project__description">{projects[currentProject].description}</p>
-                    <div className="project__skills">
+                <section data-animation={animation} className={styles.content}>
+                    <h2 className={styles.title}>{projects[currentProject].title}</h2>
+                    <p className={styles.description}>{projects[currentProject].description}</p>
+                    <div className={styles.skills}>
                         {projects[currentProject].skills.map((skill) => (
-                            <span key={skill} className={`u-highlight u-${skill === "C#" ? 'c-sharp' : skill.toLowerCase()}`}>{skill}</span>
+                            <span className={styles.highlight} key={skill === "C#" ? "c-sharp" : skill.toLowerCase()} data-skill={skill === "C#" ? "c-sharp" : skill.toLowerCase()}>{skill}</span>
                         ))}
                     </div>
-                    <div className="project__links">
+                    <div className={styles.links}>
                         {
                             projects[currentProject].deployLink ?
-                                <a className="project__link--deploy" href={projects[currentProject].deployLink} target="_blank" rel="noopener noreferrer">Try it yourself!</a>
+                                <a className={styles.deploy} href={projects[currentProject].deployLink} target="_blank" rel="noopener noreferrer">Try it yourself!</a>
                                 :
                                 <></>
                         }
                         {
                             projects[currentProject].gitLink ?
-                                <a className="project__link--git" href={projects[currentProject].gitLink} target="_blank" rel="noopener noreferrer">
+                                <a className={styles.git} href={projects[currentProject].gitLink} target="_blank" rel="noopener noreferrer">
                                     <Image fill sizes="48px" src="/assets/img/github4.png" alt="" />
                                 </a>
                                 :
@@ -143,9 +144,9 @@ export default function Project() {
                     </div>
                 </section>
             </div>
-            <div className="project__navs">
-                <button id="js-project__nav--left" className="project__nav" onClick={debounce(() => previousProject())}>←</button>
-                <button id="js-project__nav--right" className="project__nav" onClick={debounce(() => nextProject())}>→</button>
+            <div className={styles.navigation}>
+                <button onClick={debounce(() => previousProject())}>←</button>
+                <button onClick={debounce(() => nextProject())}>→</button>
             </div>
         </>
     )

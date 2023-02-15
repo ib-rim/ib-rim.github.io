@@ -226,7 +226,6 @@ select {
     animation-delay: 10s;
 }
 
-/* PROJECT CARD */
 
 .portfolio {
     background-color: var(--secondary-color);
@@ -258,93 +257,6 @@ select {
     }
 }
 
-.project {
-    --image-height: 12em;
-    --animation-length: 0.8s;
-
-    position: relative;
-    background-color: var(--white-color);
-    box-shadow: var(--shadow);
-    border: 4px solid var(--primary-color);
-    border-radius: 15px;
-    max-width: 30em;
-    overflow: hidden;
-    margin-block: 1em;
-
-    &__figure {
-        position: relative;
-        width: 100%;
-        height: var(--image-height);
-        background-color: var(--black-color);
-
-        &::before {
-            position: absolute;
-            content: '';
-            height: 50em;
-            background-color: var(--white-color);
-            width: 100%;
-            bottom: var(--image-height);
-        }
-    }
-
-    &__image {
-        width: inherit;
-        height: inherit;
-        object-fit: contain;
-        color: white;
-    }
-
-    &__content {
-        min-height: 20em;
-        display: grid;
-        gap: 1em;
-        grid-template-rows: auto 1fr auto;
-        padding: 1em;
-    }
-
-    &__skills {
-        display: flex;
-        gap: 1em;
-        font-size: 1.1rem;
-    }
-
-    &__links {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    &__link {
-        &--git {
-            position: relative;
-            height: 48px;
-            width: 48px;
-        }
-
-        &--deploy {
-            font-weight: bold;
-            font-size: 1.3rem;
-            text-decoration: underline;
-            color: var(--link-color);
-        }
-    }
-
-    &__navs {
-        display: flex;
-        gap: 1em;
-    }
-
-    &__nav {
-        background: var(--primary-color);
-        border-radius: 3px;
-        font-size: 1.5rem;
-        border: none;
-        color: var(--white-color);
-        padding: 0 0.5em;
-        box-shadow: var(--shadow);
-    }
-}
-
 @media (min-width: 800px) {
 
     .container {
@@ -357,10 +269,6 @@ select {
 
     .portfolio {
         margin-top: 0;
-    }
-
-    .project {
-        min-width: 30em;
     }
 }
 
@@ -424,48 +332,6 @@ select {
 
 /* ANIMATIONS */
 
-.wipeLeft {
-    animation-duration: var(--animation-length);
-    animation-name: wipeRight;
-    transition: ease-in-out;
-}
-
-@keyframes wipeLeft {
-
-    49.99% {
-        transform: translateX(-500px);
-    }
-
-    50% {
-        transform: translateX(500px);
-    }
-
-    100% {
-        transform: translateX(0px);
-    }
-}
-
-.wipeRight {
-    animation-duration: var(--animation-length);
-    animation-name: wipeLeft;
-    transition: ease-in-out;
-}
-
-@keyframes wipeRight {
-
-    49.99% {
-        transform: translateX(500px);
-    }
-
-    50% {
-        transform: translateX(-500px);
-    }
-
-    100% {
-        transform: translateX(0px);
-    }
-}
-
 @keyframes ticker {
     0% {
         -webkit-transform: translate3d(0, 0, 0);
@@ -483,51 +349,4 @@ select {
 
 .u-circle-border {
     border-radius: 100%;
-}
-
-.u-highlight {
-    font-weight: bold;
-    background-color: var(--black-color);
-    padding: 0.1em 0.3em;
-    border-radius: 5px;
-}
-
-.u-html {
-    color: #f43c3c;
-}
-
-.u-css {
-    color: #e696a4;
-}
-
-.u-js {
-    color: #fdad18;
-}
-
-.u-react {
-    color: #51d2d8;
-}
-
-.u-django {
-    color: #3ba318;
-}
-
-.u-unity {
-    color: #8c18a3;
-}
-
-.u-sass {
-    color: #cf649a;
-}
-
-.u-php {
-    color: #7a86b8;
-}
-
-.u-c-sharp {
-    color: #b377dc;
-}
-
-.u-nextjs {
-    color: #ffffff;
 }
