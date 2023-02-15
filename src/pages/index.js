@@ -188,16 +188,16 @@ export default function Home() {
                                 </div>
                                 <div className="project__links">
                                     {
-                                        projects[currentProject].gitLink ?
-                                            <a className="project__link--git" href={projects[currentProject].gitLink} target="_blank" rel="noopener noreferrer">
-                                                <Image fill src="/assets/img/github4.png" alt="" />
-                                            </a>
+                                        projects[currentProject].deployLink ?
+                                            <a className="project__link--deploy" href={projects[currentProject].deployLink} target="_blank" rel="noopener noreferrer">Try it yourself!</a>
                                             :
                                             <></>
                                     }
                                     {
-                                        projects[currentProject].deployLink ?
-                                            <a className="project__link--deploy" href={projects[currentProject].deployLink} target="_blank" rel="noopener noreferrer">Try it yourself!</a>
+                                        projects[currentProject].gitLink ?
+                                            <a className="project__link--git" href={projects[currentProject].gitLink} target="_blank" rel="noopener noreferrer">
+                                                <Image fill src="/assets/img/github4.png" alt="" />
+                                            </a>
                                             :
                                             <></>
                                     }
