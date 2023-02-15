@@ -1,31 +1,32 @@
+import styles from '@/styles/Ticker.module.scss';
 
 export default function Ticker() {
 
     return (
-        <div className="ticker-wrap">
-            <div className="ticker">
-                <div className="ticker__item">React</div>
-                <div className="ticker__item">Next.js</div>
-                <div className="ticker__item">Sass</div>
-                <div className="ticker__item">Vue</div>
-                <div className="ticker__item">Django</div>
-                <div className="ticker__item">WordPress</div>
-                <div className="ticker__item">Google Analytics</div>
-                <div className="ticker__item">Unity2D</div>
-                <div className="ticker__item">C#</div>
-                <div className="ticker__item">Git</div>
+        <div className={styles.wrapper}>
+            <div className={styles.ticker}>
+                <div className={styles.item}>React</div>
+                <div className={styles.item}>Next.js</div>
+                <div className={styles.item}>Sass</div>
+                <div className={styles.item}>Vue</div>
+                <div className={styles.item}>Django</div>
+                <div className={styles.item}>WordPress</div>
+                <div className={styles.item}>Google Analytics</div>
+                <div className={styles.item}>Unity2D</div>
+                <div className={styles.item}>C#</div>
+                <div className={styles.item}>Git</div>
             </div>
-            <div className="ticker ticker2">
-                <div className="ticker__item">React</div>
-                <div className="ticker__item">Next.js</div>
-                <div className="ticker__item">Sass</div>
-                <div className="ticker__item">Vue</div>
-                <div className="ticker__item">Django</div>
-                <div className="ticker__item">WordPress</div>
-                <div className="ticker__item">Google Analytics</div>
-                <div className="ticker__item">Unity2D</div>
-                <div className="ticker__item">C#</div>
-                <div className="ticker__item">Git</div>
+            <div className={styles.ticker} data-delay={"true"}>
+                <div className={styles.item}>React</div>
+                <div className={styles.item}>Next.js</div>
+                <div className={styles.item}>Sass</div>
+                <div className={styles.item}>Vue</div>
+                <div className={styles.item}>Django</div>
+                <div className={styles.item}>WordPress</div>
+                <div className={styles.item}>Google Analytics</div>
+                <div className={styles.item}>Unity2D</div>
+                <div className={styles.item}>C#</div>
+                <div className={styles.item}>Git</div>
             </div>
         </div>
     )

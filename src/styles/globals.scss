@@ -191,42 +191,6 @@ select {
     font-size: 1.2rem;
 }
 
-.ticker-wrap {
-    position: relative;
-    margin-block: 1em;
-    height: 30px;
-    width: 15em;
-    overflow-x: hidden;
-    background-color: var(--black-color);
-    box-shadow: var(--shadow);
-}
-
-.ticker {
-    position: absolute;
-    left: 100%;
-    display: flex;
-    margin: 0;
-    animation-name: ticker;
-    animation-duration: 20s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-
-    &__item {
-        margin-left: 0.5em;
-        min-width: max-content;
-
-        &::before {
-            content: '• ';
-            color: var(--secondary-color);
-        }
-    }
-}
-
-.ticker2 {
-    animation-delay: 10s;
-}
-
-
 .portfolio {
     background-color: var(--secondary-color);
     color: var(--black-color);
@@ -327,21 +291,6 @@ select {
         mask-image: url('/assets/svg/triangle-vertical.svg');
         -webkit-mask-image: url('/assets/svg/triangle-vertical.svg');
         rotate: 180deg;
-    }
-}
-
-/* ANIMATIONS */
-
-@keyframes ticker {
-    0% {
-        -webkit-transform: translate3d(0, 0, 0);
-        transform: translate3d(0, 0, 0);
-        visibility: visible;
-    }
-
-    100% {
-        -webkit-transform: translate3d(-200%, 0, 0);
-        transform: translate3d(-200%, 0, 0);
     }
 }
 
