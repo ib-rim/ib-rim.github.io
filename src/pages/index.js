@@ -2,15 +2,14 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Project from './components/Project';
 import Ticker from './components/Ticker';
-import { useState } from 'react';
 import { Client } from '@notionhq/client';
 
 export async function getStaticProps() {
     const notion = new Client({ auth: process.env.NOTION_KEY });
 
-    const databaseID = process.env.NOTION_SKILLS_DATABASE_ID;
-    const response = await notion.databases.query({
-        database_id: databaseID,
+    const skillsDatabaseID = process.env.NOTION_SKILLS_DATABASE_ID;
+    const skillsResponse = await notion.databases.query({
+        database_id: skillsDatabaseID,
         "sorts": [
             {
                 "property": "Order",
@@ -20,18 +19,44 @@ export async function getStaticProps() {
     })
 
     let skillsList = []
-    response.results.forEach((result) => {
+    skillsResponse.results.forEach((result) => {
         skillsList.push(result.properties.Name.title[0].plain_text)
+    })
+
+    const projectsDatabaseID = process.env.NOTION_PROJECTS_DATABASE_ID;
+    const projectsResponse = await notion.databases.query({
+        database_id: projectsDatabaseID,
+        "sorts": [
+            {
+                "property": "Order",
+                "direction": "ascending"
+            }
+        ]
+    })
+
+    let projectsList = [];
+    projectsResponse.results.forEach((result) => {
+        projectsList.push(
+            {
+                title: result.properties.Title.title[0].plain_text,
+                description: result.properties.Description.rich_text[0].plain_text,
+                skills: result.properties.Skills.multi_select.map((skill) => skill.name),
+                src: result.properties.SRC.rich_text[0].plain_text,
+                alt: result.properties.ALT.rich_text[0].plain_text,
+                gitLink: result.properties.GitLink.url,
+                deployLink: result.properties.DeployLink.url,
+            })
     })
 
     return {
         props: {
             skills: skillsList,
+            projects: projectsList,
         },
     };
 }
 
-export default function Home({ skills }) {
+export default function Home({ skills, projects }) {
 
     return (
         <>
@@ -65,12 +90,12 @@ export default function Home({ skills }) {
                         </figure>
                         <section className="skills-section">
                             <h2 className="heading">Skillset</h2>
-                            <Ticker items={skills}/>
+                            <Ticker items={skills || []}/>
                         </section>
                     </div>
                     <section className="portfolio">
                         <h2 className="heading">Portfolio</h2>
-                        <Project/>
+                        <Project projects={projects || []}/>
                     </section>
                 </div>
             </main>
