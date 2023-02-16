@@ -1,32 +1,25 @@
 import styles from '@/styles/Ticker.module.scss';
+import { useState } from 'react';
 
-export default function Ticker() {
+export default function Ticker(props) {
+
+    const [items, setItems] = useState(handleItems());
+
+    function handleItems() {
+        let items = []
+        props.items.forEach((item) => {
+            items.push(<div key={item} className={styles.item}>{item}</div>);
+        })
+        return items;
+    }
 
     return (
         <div className={styles.wrapper}>
             <div className={styles.ticker}>
-                <div className={styles.item}>React</div>
-                <div className={styles.item}>Next.js</div>
-                <div className={styles.item}>Sass</div>
-                <div className={styles.item}>Vue</div>
-                <div className={styles.item}>Django</div>
-                <div className={styles.item}>WordPress</div>
-                <div className={styles.item}>Google Analytics</div>
-                <div className={styles.item}>Unity2D</div>
-                <div className={styles.item}>C#</div>
-                <div className={styles.item}>Git</div>
+                {items}
             </div>
             <div className={styles.ticker} data-delay={"true"}>
-                <div className={styles.item}>React</div>
-                <div className={styles.item}>Next.js</div>
-                <div className={styles.item}>Sass</div>
-                <div className={styles.item}>Vue</div>
-                <div className={styles.item}>Django</div>
-                <div className={styles.item}>WordPress</div>
-                <div className={styles.item}>Google Analytics</div>
-                <div className={styles.item}>Unity2D</div>
-                <div className={styles.item}>C#</div>
-                <div className={styles.item}>Git</div>
+                {items}
             </div>
         </div>
     )

@@ -2,8 +2,36 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Project from './components/Project';
 import Ticker from './components/Ticker';
+import { useState } from 'react';
+import { Client } from '@notionhq/client';
 
-export default function Home() {
+export async function getStaticProps() {
+    const notion = new Client({ auth: process.env.NOTION_KEY });
+
+    const databaseID = process.env.NOTION_SKILLS_DATABASE_ID;
+    const response = await notion.databases.query({
+        database_id: databaseID,
+        "sorts": [
+            {
+                "property": "Order",
+                "direction": "ascending"
+            }
+        ]
+    })
+
+    let skillsList = []
+    response.results.forEach((result) => {
+        skillsList.push(result.properties.Name.title[0].plain_text)
+    })
+
+    return {
+        props: {
+            skills: skillsList,
+        },
+    };
+}
+
+export default function Home({ skills }) {
 
     return (
         <>
@@ -37,7 +65,7 @@ export default function Home() {
                         </figure>
                         <section className="skills-section">
                             <h2 className="heading">Skillset</h2>
-                            <Ticker/>
+                            <Ticker items={skills}/>
                         </section>
                     </div>
                     <section className="portfolio">
