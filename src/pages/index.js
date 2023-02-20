@@ -3,6 +3,8 @@ import Image from 'next/image';
 import Project from './components/Project';
 import Ticker from './components/Ticker';
 import { Client } from '@notionhq/client';
+import { useEffect, useState } from 'react';
+import ReadingList from './components/ReadingList';
 
 export async function getStaticProps() {
     const notion = new Client({ auth: process.env.NOTION_KEY });
@@ -48,15 +50,63 @@ export async function getStaticProps() {
             })
     })
 
+    const booksDatabaseID = process.env.NOTION_BOOKS_DATABASE_ID;
+    const booksResponse = await notion.databases.query({
+        database_id: booksDatabaseID,
+        "filter": {
+            "and": [
+                {
+                    "or": [
+                        {
+                            "property": "Started",
+                            "date": {
+                                "after": "2023-01-01T00:00:00"
+                            }
+                        },
+                        {
+                            "property": "Status",
+                            "select": {
+                                "equals": "Unread"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "property": "Public",
+                    "checkbox": {
+                        "equals": true
+                    }
+                }
+            ]
+        },
+        "sorts": [
+            {
+                "property": "Started",
+                "direction": "ascending"
+            }
+        ]
+    })
+
+    let booksList = [];
+    booksResponse.results.forEach((result) => {
+        booksList.push(
+            {
+                title: result.properties.Title.title[0].plain_text,
+                status: result.properties.Status.select.name,
+                author: result.properties.Author.rich_text[0].plain_text,
+            })
+    })
+
     return {
         props: {
             skills: skillsList,
             projects: projectsList,
+            books: booksList,
         },
     };
 }
 
-export default function Home({ skills, projects }) {
+export default function Home({ skills, projects, books }) {
 
     return (
         <>
@@ -90,12 +140,17 @@ export default function Home({ skills, projects }) {
                         </figure>
                         <section className="skills-section">
                             <h2 className="heading">Skillset</h2>
-                            <Ticker items={skills || []}/>
+                            <Ticker items={skills || []} />
                         </section>
                     </div>
                     <section className="portfolio">
                         <h2 className="heading">Portfolio</h2>
-                        <Project projects={projects || []}/>
+                        <Project projects={projects || []} />
+                    </section>
+                    <section className="">
+                    </section>
+                    <section className="personal">
+                        <ReadingList books={books || []}/>
                     </section>
                 </div>
             </main>
