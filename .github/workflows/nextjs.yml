@@ -27,6 +27,11 @@ jobs:
   # Build job
   build:
     runs-on: ubuntu-latest
+    env: 
+      NOTION_BOOKS_DATABASE_ID: ${{ secrets.NOTION_BOOKS_DATABASE_ID }}
+      NOTION_SKILLS_DATABASE_ID: ${{ secrets.NOTION_SKILLS_DATABASE_ID }}
+      NOTION_PROJECTS_DATABASE_ID: ${{ secrets.NOTION_PROJECTS_DATABASE_ID }}
+      NOTION_KEY: ${{ secrets.NOTION_KEY }}
     steps:
       - name: Checkout
         uses: actions/checkout@v3
