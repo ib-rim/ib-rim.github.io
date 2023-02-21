@@ -6,6 +6,21 @@
     overflow-x: hidden;
     background-color: var(--black-color);
     box-shadow: var(--shadow);
+
+    @media (prefers-reduced-motion: reduce) {
+        height: fit-content;
+        font-size: 1rem;
+        background: none;
+        box-shadow: none;
+
+        &::after {
+            content: 'Enable animations for a ticker display!';
+            font-size: 0.75rem;
+            font-style: italic;
+            text-align: center;
+            margin-top: 1em;
+        }
+    }
 }
 
 .ticker {
@@ -18,7 +33,14 @@
     animation-timing-function: linear;
     animation-iteration-count: infinite;
 
-    & > .item {
+    @media (prefers-reduced-motion: reduce) {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        left: 0%;
+    }
+
+    &>.item {
         margin-left: 0.5em;
         min-width: max-content;
 
@@ -31,6 +53,10 @@
 
 .ticker[data-delay="true"] {
     animation-delay: 10s;
+
+    @media (prefers-reduced-motion: reduce) {
+        display: none;
+    }
 }
 
 /* ANIMATION */
