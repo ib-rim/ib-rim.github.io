@@ -1,9 +1,9 @@
 import Head from 'next/head';
 import Image from 'next/image';
-import Project from './components/Project';
-import Ticker from './components/Ticker';
+import Project from '../components/Project';
+import Ticker from '../components/Ticker';
 import { Client } from '@notionhq/client';
-import ReadingList from './components/ReadingList';
+import ReadingList from '../components/ReadingList';
 
 export async function getStaticProps() {
     const notion = new Client({ auth: process.env.NOTION_KEY });
