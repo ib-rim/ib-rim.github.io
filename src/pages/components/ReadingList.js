@@ -18,7 +18,7 @@ export default function ReadingList(props) {
             <tbody>
                 {books.map(book => {
                     return (
-                        <tr key={book.id}>
+                        <tr key={book.title}>
                             <th scope="row">{book.title}</th>
                             <td className={styles.author}>{book.author}</td>
                             <td data-status={book.status} className={styles.status}>{book.status}</td>
