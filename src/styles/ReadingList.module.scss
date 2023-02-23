@@ -5,12 +5,13 @@
     border-collapse: collapse;
     border-radius: 15px;
     background-color: var(--white-color);
-    box-shadow: 0 0 0 4px var(--primary-color), var(--shadow);
+    box-shadow: 0 0 0 4px var(--secondary-color), var(--shadow);
     /* this draws the table border  */
     overflow: hidden;
 
-    @media (min-width: 800px) {
-        margin: 2em;
+    thead,
+    tbody {
+        color: var(--black-color);
     }
 
     th {
@@ -29,7 +30,7 @@
     }
 
     .title {
-        max-width: 400px;
+        max-width: 300px;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: normal;
