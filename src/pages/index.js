@@ -313,7 +313,7 @@ export default function Home({ skills, projects, books }) {
                                 </figure>
                                 <p className="hobbyText">
                                     <h3 className="hobbyTitle">Embroidery</h3>
-                                    I recently picked up embroidery since sewing has always interested me and I was looking for a hobby that didn't involve looking at a screen.
+                                    I recently picked up embroidery since sewing has always interested me and I was looking for a hobby that didn&apos;t involve looking at a screen.
                                 </p>
                             </div>
                             <div className="hobby">
@@ -323,8 +323,8 @@ export default function Home({ skills, projects, books }) {
                                 </figure>
                                 <div className="hobbyText">
                                     <h3 className="hobbyTitle">Design</h3>
-                                    <p>I'm really interested in user centred design and how to make services as intuitive and accessible as possible.
-                                        I'm very inspired by the work the UK Government Digital Service has done in this field and I'm reading books from former developers and designers at GDS.</p>
+                                    <p>I&apos;m really interested in user centred design and how to make services as intuitive and accessible as possible.
+                                        I&apos;m very inspired by the work the UK Government Digital Service has done in this field and I&apos;m reading books from former developers and designers at GDS.</p>
                                 </div>
                             </div>
                         </div>
