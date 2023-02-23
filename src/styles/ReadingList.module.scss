@@ -5,7 +5,8 @@
     border-collapse: collapse;
     border-radius: 15px;
     background-color: var(--white-color);
-    box-shadow: 0 0 0 4px var(--primary-color), var(--shadow); /* this draws the table border  */ 
+    box-shadow: 0 0 0 4px var(--primary-color), var(--shadow);
+    /* this draws the table border  */
     overflow: hidden;
 
     @media (min-width: 800px) {
@@ -27,13 +28,29 @@
         margin-bottom: 1em;
     }
 
+    .title {
+        max-width: 400px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: normal;
+
+        &:hover {
+            white-space: normal;
+        }
+
+        @media (min-width: 800px) {
+            white-space: nowrap;
+        }
+    }
+
     thead tr th,
     tr:not(:last-of-type) th,
     tr:not(:last-of-type) td {
         border-bottom: 1px solid var(--primary-color);
     }
 
-    .author, .status {
+    .author,
+    .status {
         padding-inline: 1em;
     }
 

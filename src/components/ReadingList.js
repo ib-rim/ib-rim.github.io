@@ -10,7 +10,7 @@ export default function ReadingList(props) {
             <caption className={styles.caption}>{new Date().getFullYear()} Reading List</caption>
             <thead>
                 <tr>
-                    <th scope="col">Title</th>
+                    <th scope="col" className={styles.title}>Title</th>
                     <th scope="col" className={styles.author}>Author</th>
                     <th scope="col" className={styles.status}>Status</th>
                 </tr>
@@ -19,7 +19,7 @@ export default function ReadingList(props) {
                 {books.map(book => {
                     return (
                         <tr key={book.title}>
-                            <th scope="row">{book.title}</th>
+                            <th scope="row" className={styles.title}>{book.title}</th>
                             <td className={styles.author}>{book.author}</td>
                             <td data-status={book.status} className={styles.status}>{book.status}</td>
                         </tr>)
