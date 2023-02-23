@@ -261,7 +261,7 @@ export default function Home({ skills, projects, books }) {
             </Head>
             <main>
                 <div className="container">
-                    <div className="about-me">
+                    <div>
                         <header className="header">
                             <div className="contact">
                                 <a className="contact__icon" href="https://uk.linkedin.com/in/ibrahim-bashir-250953197" target="_blank"
@@ -290,10 +290,44 @@ export default function Home({ skills, projects, books }) {
                         <h2 className="heading">Portfolio</h2>
                         <Project projects={projects} />
                     </section>
-                    <section className="">
-                    </section>
-                    <section className="personal">
+                    <section>
                         <ReadingList books={books} />
+                    </section>
+                    <section>
+                        <h2>Hobbies</h2>
+                        <div className="hobbies">
+                            <div className="hobby">
+                                <figure className="hobbyFigure">
+                                    <Image className="hobbyImage" fill sizes="auto" src="/assets/img/gamecollage.png"
+                                        alt="game screenshots" />
+                                </figure>
+                                <p className="hobbyText">
+                                    <h3 className="hobbyTitle">Games</h3>
+                                    I love playing videogames whenever I can. My favourite games are Celeste, Hades, Overwatch, Hollow Knight and Control.
+                                </p>
+                            </div>
+                            <div className="hobby">
+                                <figure className="hobbyFigure">
+                                    <Image className="hobbyImage" fill sizes="auto" src="/assets/img/plantsembroidery.png"
+                                        alt="game screenshots" />
+                                </figure>
+                                <p className="hobbyText">
+                                    <h3 className="hobbyTitle">Embroidery</h3>
+                                    I recently picked up embroidery since sewing has always interested me and I was looking for a hobby that didn't involve looking at a screen.
+                                </p>
+                            </div>
+                            <div className="hobby">
+                                <figure className="hobbyFigure">
+                                    <Image className="hobbyImage" fill sizes="auto" src="/assets/img/books.png"
+                                        alt="game screenshots" />
+                                </figure>
+                                <div className="hobbyText">
+                                    <h3 className="hobbyTitle">Design</h3>
+                                    <p>I'm really interested in user centred design and how to make services as intuitive and accessible as possible.
+                                        I'm very inspired by the work the UK Government Digital Service has done in this field and I'm reading books from former developers and designers at GDS.</p>
+                                </div>
+                            </div>
+                        </div>
                     </section>
                 </div>
             </main>

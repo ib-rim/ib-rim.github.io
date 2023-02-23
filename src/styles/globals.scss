@@ -316,6 +316,63 @@ select {
     font-size: 1.2rem;
 }
 
+/* ABOUT ME */
+
+.hobbies {
+    margin: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.hobby {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    justify-content: center;
+    align-items: center;
+    border: 4px solid var(--primary-color);
+    border-radius: 15px;
+    background-color: var(--black-color);
+    color: var(--white-color);
+    overflow: hidden;
+    max-width: 400px;
+
+    @media (min-width: 800px) {
+        flex-direction: row;
+        max-width: 600px;
+    }
+}
+
+.hobbyFigure {
+    position: relative;
+    height: 300px;
+    width: 100%;
+    background-color: white;
+
+    @media (min-width: 800px) {
+        height: 100%;
+    }
+}
+
+.hobbyImage {
+    object-fit: cover;
+}
+
+.hobbyTitle {
+    margin-bottom: 0.5em;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.hobbyText {
+    padding: 0em 1em 1em;
+
+    @media (min-width: 800px) {
+        padding: 1em;
+    }
+}
+
 /* Utility */
 
 .u-circle-border {
