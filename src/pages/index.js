@@ -300,19 +300,19 @@ export default function Home({ skills, projects, books }) {
                                 <figure className="hobbyFigure">
                                     <Image className="hobbyImage" fill sizes="auto" src="/assets/img/gamecollage.png" alt="game screenshots" />
                                 </figure>
-                                <p className="hobbyText">
+                                <div className="hobbyText">
                                     <h3 className="hobbyTitle">Games</h3>
-                                    I love playing videogames whenever I can. My favourite games are Celeste, Hades, Overwatch, Hollow Knight and Control.
-                                </p>
+                                    <p>I love playing videogames whenever I can. My favourite games are Celeste, Hades, Overwatch, Hollow Knight and Control.</p>
+                                </div>
                             </div>
                             <div className="hobby">
                                 <figure className="hobbyFigure">
                                     <Image className="hobbyImage" fill sizes="auto" src="/assets/img/plantsembroidery.png" alt="Fully embroidered design of 5 plotted plants" />
                                 </figure>
-                                <p className="hobbyText">
+                                <div className="hobbyText">
                                     <h3 className="hobbyTitle">Embroidery</h3>
-                                    I recently picked up embroidery since sewing has always interested me and I was looking for a hobby that didn&apos;t involve looking at a screen.
-                                </p>
+                                    <p>I recently picked up embroidery since sewing has always interested me and I was looking for a hobby that didn&apos;t involve looking at a screen.</p>
+                                </div>
                             </div>
                             <div className="hobby">
                                 <figure className="hobbyFigure">
