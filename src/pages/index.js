@@ -298,8 +298,7 @@ export default function Home({ skills, projects, books }) {
                         <div className="hobbies">
                             <div className="hobby">
                                 <figure className="hobbyFigure">
-                                    <Image className="hobbyImage" fill sizes="auto" src="/assets/img/gamecollage.png"
-                                        alt="game screenshots" />
+                                    <Image className="hobbyImage" fill sizes="auto" src="/assets/img/gamecollage.png" alt="game screenshots" />
                                 </figure>
                                 <p className="hobbyText">
                                     <h3 className="hobbyTitle">Games</h3>
@@ -308,8 +307,7 @@ export default function Home({ skills, projects, books }) {
                             </div>
                             <div className="hobby">
                                 <figure className="hobbyFigure">
-                                    <Image className="hobbyImage" fill sizes="auto" src="/assets/img/plantsembroidery.png"
-                                        alt="game screenshots" />
+                                    <Image className="hobbyImage" fill sizes="auto" src="/assets/img/plantsembroidery.png" alt="Fully embroidered design of 5 plotted plants" />
                                 </figure>
                                 <p className="hobbyText">
                                     <h3 className="hobbyTitle">Embroidery</h3>
@@ -318,8 +316,7 @@ export default function Home({ skills, projects, books }) {
                             </div>
                             <div className="hobby">
                                 <figure className="hobbyFigure">
-                                    <Image className="hobbyImage" fill sizes="auto" src="/assets/img/books.png"
-                                        alt="game screenshots" />
+                                    <Image className="hobbyImage" fill sizes="auto" src="/assets/img/books.png" alt="A pile of books about design and digital transformation with Good Services by Lou Downe on top." />
                                 </figure>
                                 <div className="hobbyText">
                                     <h3 className="hobbyTitle">Design</h3>
