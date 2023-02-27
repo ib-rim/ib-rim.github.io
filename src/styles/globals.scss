@@ -364,6 +364,10 @@ select {
     margin-bottom: 0.5em;
     text-align: center;
     font-size: 1.5rem;
+
+    @media (min-width: 800px) {
+        text-align: left;
+    }
 }
 
 .hobbyText {
