@@ -342,6 +342,10 @@ select {
     @media (min-width: 800px) {
         flex-direction: row;
         max-width: 600px;
+
+        &:nth-of-type(2) {
+            flex-flow: row-reverse;
+        }
     }
 }
 
