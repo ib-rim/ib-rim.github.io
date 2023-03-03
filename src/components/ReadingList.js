@@ -7,7 +7,7 @@ export default function ReadingList(props) {
 
     return (
         <table className={styles.table}>
-            <caption className={styles.caption}>{new Date().getFullYear()} Reading List</caption>
+            <caption className={styles.caption}>{new Date().getFullYear()} Reading List Highlights</caption>
             <thead>
                 <tr>
                     <th scope="col" className={styles.title}>Title</th>
